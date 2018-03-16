@@ -20,9 +20,9 @@ namespace Projet_equipe {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DS_bd")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DS_bde1")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DS_bd : global::System.Data.DataSet {
+    public partial class DS_bde1 : global::System.Data.DataSet {
         
         private ArriveDataTable tableArrive;
         
@@ -86,7 +86,7 @@ namespace Projet_equipe {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public DS_bd() {
+        public DS_bde1() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -97,7 +97,7 @@ namespace Projet_equipe {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected DS_bd(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DS_bde1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -326,7 +326,7 @@ namespace Projet_equipe {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DS_bd cln = ((DS_bd)(base.Clone()));
+            DS_bde1 cln = ((DS_bde1)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -514,9 +514,9 @@ namespace Projet_equipe {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DS_bd";
+            this.DataSetName = "DS_bde1";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DS_bd.xsd";
+            this.Namespace = "http://tempuri.org/DS_bde1.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableArrive = new ArriveDataTable();
@@ -696,7 +696,7 @@ namespace Projet_equipe {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DS_bd ds = new DS_bd();
+            DS_bde1 ds = new DS_bde1();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1045,7 +1045,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1314,7 +1314,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1393,6 +1393,12 @@ namespace Projet_equipe {
             private global::System.Data.DataColumn columnCodLoc;
             
             private global::System.Data.DataColumn columnCodTypChan;
+            
+            private global::System.Data.DataColumn columnIdReser;
+            
+            private global::System.Data.DataColumn columnDescTyp;
+            
+            private global::System.Data.DataColumn columnAttribuee;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -1485,6 +1491,30 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn IdReserColumn {
+                get {
+                    return this.columnIdReser;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescTypColumn {
+                get {
+                    return this.columnDescTyp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn AttribueeColumn {
+                get {
+                    return this.columnAttribuee;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1520,7 +1550,7 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ChambreRow AddChambreRow(string NoCham, string Etage, decimal Prix, byte Etat, string Memo, LocalisationRow parentLocalisationRowByFK__Chambre__CodLoc__66603565, TypeChamRow parentTypeChamRowByFK__Chambre__CodTypC__6754599E) {
+            public ChambreRow AddChambreRow(string NoCham, string Etage, decimal Prix, byte Etat, string Memo, LocalisationRow parentLocalisationRowByFK__Chambre__CodLoc__66603565, TypeChamRow parentTypeChamRowByFK__Chambre__CodTypC__6754599E, string IdReser, string DescTyp, string Attribuee) {
                 ChambreRow rowChambreRow = ((ChambreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NoCham,
@@ -1529,7 +1559,10 @@ namespace Projet_equipe {
                         Etat,
                         Memo,
                         null,
-                        null};
+                        null,
+                        IdReser,
+                        DescTyp,
+                        Attribuee};
                 if ((parentLocalisationRowByFK__Chambre__CodLoc__66603565 != null)) {
                     columnValuesArray[5] = parentLocalisationRowByFK__Chambre__CodLoc__66603565[0];
                 }
@@ -1572,6 +1605,9 @@ namespace Projet_equipe {
                 this.columnMemo = base.Columns["Memo"];
                 this.columnCodLoc = base.Columns["CodLoc"];
                 this.columnCodTypChan = base.Columns["CodTypChan"];
+                this.columnIdReser = base.Columns["IdReser"];
+                this.columnDescTyp = base.Columns["DescTyp"];
+                this.columnAttribuee = base.Columns["Attribuee"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1591,6 +1627,12 @@ namespace Projet_equipe {
                 base.Columns.Add(this.columnCodLoc);
                 this.columnCodTypChan = new global::System.Data.DataColumn("CodTypChan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodTypChan);
+                this.columnIdReser = new global::System.Data.DataColumn("IdReser", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnIdReser);
+                this.columnDescTyp = new global::System.Data.DataColumn("DescTyp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescTyp);
+                this.columnAttribuee = new global::System.Data.DataColumn("Attribuee", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAttribuee);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNoCham}, true));
                 this.columnNoCham.AllowDBNull = false;
@@ -1667,7 +1709,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2032,7 +2074,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2306,7 +2348,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2588,7 +2630,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2931,7 +2973,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3205,7 +3247,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3526,7 +3568,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3900,7 +3942,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4188,7 +4230,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4477,7 +4519,7 @@ namespace Projet_equipe {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DS_bd ds = new DS_bd();
+                DS_bde1 ds = new DS_bde1();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4923,6 +4965,54 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string IdReser {
+                get {
+                    try {
+                        return ((string)(this[this.tableChambre.IdReserColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'IdReser\' in table \'Chambre\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChambre.IdReserColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescTyp {
+                get {
+                    try {
+                        return ((string)(this[this.tableChambre.DescTypColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescTyp\' in table \'Chambre\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChambre.DescTypColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Attribuee {
+                get {
+                    try {
+                        return ((string)(this[this.tableChambre.AttribueeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Attribuee\' in table \'Chambre\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChambre.AttribueeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public LocalisationRow LocalisationRow {
                 get {
                     return ((LocalisationRow)(this.GetParentRow(this.Table.ParentRelations["FK__Chambre__CodLoc__66603565"])));
@@ -5013,6 +5103,42 @@ namespace Projet_equipe {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCodTypChanNull() {
                 this[this.tableChambre.CodTypChanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsIdReserNull() {
+                return this.IsNull(this.tableChambre.IdReserColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetIdReserNull() {
+                this[this.tableChambre.IdReserColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescTypNull() {
+                return this.IsNull(this.tableChambre.DescTypColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescTypNull() {
+                this[this.tableChambre.DescTypColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsAttribueeNull() {
+                return this.IsNull(this.tableChambre.AttribueeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetAttribueeNull() {
+                this[this.tableChambre.AttribueeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6841,7 +6967,7 @@ namespace Projet_equipe {
         }
     }
 }
-namespace Projet_equipe.DS_bdTableAdapters {
+namespace Projet_equipe.DS_bde1TableAdapters {
     
     
     /// <summary>
@@ -7036,7 +7162,7 @@ SELECT IdArrive, DateArrive, IdCli, IdReser, NoCham FROM Arrive WHERE (IdArrive 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.ArriveDataTable dataTable) {
+        public virtual int Fill(DS_bde1.ArriveDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7049,9 +7175,9 @@ SELECT IdArrive, DateArrive, IdCli, IdReser, NoCham FROM Arrive WHERE (IdArrive 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.ArriveDataTable GetData() {
+        public virtual DS_bde1.ArriveDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.ArriveDataTable dataTable = new DS_bd.ArriveDataTable();
+            DS_bde1.ArriveDataTable dataTable = new DS_bde1.ArriveDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7059,14 +7185,14 @@ SELECT IdArrive, DateArrive, IdCli, IdReser, NoCham FROM Arrive WHERE (IdArrive 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.ArriveDataTable dataTable) {
+        public virtual int Update(DS_bde1.ArriveDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "Arrive");
         }
         
@@ -7425,7 +7551,7 @@ SELECT IdArrive, DateArrive, IdCli, IdReser, NoCham FROM Arrive WHERE (IdArrive 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.AyantDataTable dataTable) {
+        public virtual int Fill(DS_bde1.AyantDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7438,9 +7564,9 @@ SELECT IdArrive, DateArrive, IdCli, IdReser, NoCham FROM Arrive WHERE (IdArrive 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.AyantDataTable GetData() {
+        public virtual DS_bde1.AyantDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.AyantDataTable dataTable = new DS_bd.AyantDataTable();
+            DS_bde1.AyantDataTable dataTable = new DS_bde1.AyantDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7448,14 +7574,14 @@ SELECT IdArrive, DateArrive, IdCli, IdReser, NoCham FROM Arrive WHERE (IdArrive 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.AyantDataTable dataTable) {
+        public virtual int Update(DS_bde1.AyantDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "Ayant");
         }
         
@@ -7710,7 +7836,7 @@ SELECT NoCham, Etage, Prix, Etat, Memo, CodLoc, CodTypChan FROM Chambre WHERE (N
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.ChambreDataTable dataTable) {
+        public virtual int Fill(DS_bde1.ChambreDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7723,9 +7849,9 @@ SELECT NoCham, Etage, Prix, Etat, Memo, CodLoc, CodTypChan FROM Chambre WHERE (N
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.ChambreDataTable GetData() {
+        public virtual DS_bde1.ChambreDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.ChambreDataTable dataTable = new DS_bd.ChambreDataTable();
+            DS_bde1.ChambreDataTable dataTable = new DS_bde1.ChambreDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7733,14 +7859,14 @@ SELECT NoCham, Etage, Prix, Etat, Memo, CodLoc, CodTypChan FROM Chambre WHERE (N
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.ChambreDataTable dataTable) {
+        public virtual int Update(DS_bde1.ChambreDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "Chambre");
         }
         
@@ -8220,7 +8346,7 @@ SELECT IdCli, Nom, Adresse, Telephone, NoCarte, TypeCarte, DatExp, SoldeDu FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.ClientDataTable dataTable) {
+        public virtual int Fill(DS_bde1.ClientDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8233,9 +8359,9 @@ SELECT IdCli, Nom, Adresse, Telephone, NoCarte, TypeCarte, DatExp, SoldeDu FROM 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.ClientDataTable GetData() {
+        public virtual DS_bde1.ClientDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.ClientDataTable dataTable = new DS_bd.ClientDataTable();
+            DS_bde1.ClientDataTable dataTable = new DS_bde1.ClientDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8243,14 +8369,14 @@ SELECT IdCli, Nom, Adresse, Telephone, NoCarte, TypeCarte, DatExp, SoldeDu FROM 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.ClientDataTable dataTable) {
+        public virtual int Update(DS_bde1.ClientDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "Client");
         }
         
@@ -8728,7 +8854,7 @@ SELECT CodCom, DescCom FROM Commodite WHERE (CodCom = @CodCom)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.CommoditeDataTable dataTable) {
+        public virtual int Fill(DS_bde1.CommoditeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8741,9 +8867,9 @@ SELECT CodCom, DescCom FROM Commodite WHERE (CodCom = @CodCom)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.CommoditeDataTable GetData() {
+        public virtual DS_bde1.CommoditeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.CommoditeDataTable dataTable = new DS_bd.CommoditeDataTable();
+            DS_bde1.CommoditeDataTable dataTable = new DS_bde1.CommoditeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8751,14 +8877,14 @@ SELECT CodCom, DescCom FROM Commodite WHERE (CodCom = @CodCom)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.CommoditeDataTable dataTable) {
+        public virtual int Update(DS_bde1.CommoditeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "Commodite");
         }
         
@@ -9057,7 +9183,7 @@ SELECT CodCom, DescCom FROM Commodite WHERE (CodCom = @CodCom)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.DeDataTable dataTable) {
+        public virtual int Fill(DS_bde1.DeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9070,9 +9196,9 @@ SELECT CodCom, DescCom FROM Commodite WHERE (CodCom = @CodCom)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.DeDataTable GetData() {
+        public virtual DS_bde1.DeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.DeDataTable dataTable = new DS_bd.DeDataTable();
+            DS_bde1.DeDataTable dataTable = new DS_bde1.DeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9080,14 +9206,14 @@ SELECT CodCom, DescCom FROM Commodite WHERE (CodCom = @CodCom)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.DeDataTable dataTable) {
+        public virtual int Update(DS_bde1.DeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "De");
         }
         
@@ -9345,7 +9471,7 @@ SELECT IdDepart, DateDepart, ConfirmerPar, IdReser, NoCham, IdCli FROM Depart WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.DepartDataTable dataTable) {
+        public virtual int Fill(DS_bde1.DepartDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9358,9 +9484,9 @@ SELECT IdDepart, DateDepart, ConfirmerPar, IdReser, NoCham, IdCli FROM Depart WH
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.DepartDataTable GetData() {
+        public virtual DS_bde1.DepartDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.DepartDataTable dataTable = new DS_bd.DepartDataTable();
+            DS_bde1.DepartDataTable dataTable = new DS_bde1.DepartDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9368,14 +9494,14 @@ SELECT IdDepart, DateDepart, ConfirmerPar, IdReser, NoCham, IdCli FROM Depart WH
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.DepartDataTable dataTable) {
+        public virtual int Update(DS_bde1.DepartDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "Depart");
         }
         
@@ -9781,7 +9907,7 @@ SELECT CodLoc, DescLoc FROM Localisation WHERE (CodLoc = @CodLoc)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.LocalisationDataTable dataTable) {
+        public virtual int Fill(DS_bde1.LocalisationDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9794,9 +9920,9 @@ SELECT CodLoc, DescLoc FROM Localisation WHERE (CodLoc = @CodLoc)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.LocalisationDataTable GetData() {
+        public virtual DS_bde1.LocalisationDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.LocalisationDataTable dataTable = new DS_bd.LocalisationDataTable();
+            DS_bde1.LocalisationDataTable dataTable = new DS_bde1.LocalisationDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9804,14 +9930,14 @@ SELECT CodLoc, DescLoc FROM Localisation WHERE (CodLoc = @CodLoc)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.LocalisationDataTable dataTable) {
+        public virtual int Update(DS_bde1.LocalisationDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "Localisation");
         }
         
@@ -10135,18 +10261,22 @@ SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM Reservation WHERE (IdR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM dbo.Reservation";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT Reservation.DateDebut, Reservation.DateFin, Reservation.DateReser, Reservation.IdCli, Reservation.IdReser, Client.Nom, Client.Adresse, Client.Telephone, Client.NoCarte, Client.TypeCarte, Client.DatExp FROM Reservation INNER JOIN Client ON Reservation.IdCli = Client.IdCli ORDER BY Reservation.IdReser";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.ReservationDataTable dataTable) {
+        public virtual int Fill(DS_bde1.ReservationDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10159,9 +10289,9 @@ SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM Reservation WHERE (IdR
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.ReservationDataTable GetData() {
+        public virtual DS_bde1.ReservationDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.ReservationDataTable dataTable = new DS_bd.ReservationDataTable();
+            DS_bde1.ReservationDataTable dataTable = new DS_bde1.ReservationDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10169,14 +10299,38 @@ SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM Reservation WHERE (IdR
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.ReservationDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DS_bde1.ReservationDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_bde1.ReservationDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            DS_bde1.ReservationDataTable dataTable = new DS_bde1.ReservationDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(DS_bde1.ReservationDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "Reservation");
         }
         
@@ -10595,7 +10749,7 @@ SELECT IdTrx, DateTrx, MontantTrx, Reportee, CodTypTrx, IdReser, NoCham, IdCli F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.TRXDataTable dataTable) {
+        public virtual int Fill(DS_bde1.TRXDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10608,9 +10762,9 @@ SELECT IdTrx, DateTrx, MontantTrx, Reportee, CodTypTrx, IdReser, NoCham, IdCli F
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.TRXDataTable GetData() {
+        public virtual DS_bde1.TRXDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.TRXDataTable dataTable = new DS_bd.TRXDataTable();
+            DS_bde1.TRXDataTable dataTable = new DS_bde1.TRXDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10618,14 +10772,14 @@ SELECT IdTrx, DateTrx, MontantTrx, Reportee, CodTypTrx, IdReser, NoCham, IdCli F
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.TRXDataTable dataTable) {
+        public virtual int Update(DS_bde1.TRXDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "TRX");
         }
         
@@ -11113,7 +11267,7 @@ SELECT CodTypChan, DescTyp, NbDispo FROM TypeCham WHERE (CodTypChan = @CodTypCha
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.TypeChamDataTable dataTable) {
+        public virtual int Fill(DS_bde1.TypeChamDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11126,9 +11280,9 @@ SELECT CodTypChan, DescTyp, NbDispo FROM TypeCham WHERE (CodTypChan = @CodTypCha
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.TypeChamDataTable GetData() {
+        public virtual DS_bde1.TypeChamDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.TypeChamDataTable dataTable = new DS_bd.TypeChamDataTable();
+            DS_bde1.TypeChamDataTable dataTable = new DS_bde1.TypeChamDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11136,14 +11290,14 @@ SELECT CodTypChan, DescTyp, NbDispo FROM TypeCham WHERE (CodTypChan = @CodTypCha
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.TypeChamDataTable dataTable) {
+        public virtual int Update(DS_bde1.TypeChamDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "TypeCham");
         }
         
@@ -11495,7 +11649,7 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DS_bd.TypeTRXDataTable dataTable) {
+        public virtual int Fill(DS_bde1.TypeTRXDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11508,9 +11662,9 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DS_bd.TypeTRXDataTable GetData() {
+        public virtual DS_bde1.TypeTRXDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DS_bd.TypeTRXDataTable dataTable = new DS_bd.TypeTRXDataTable();
+            DS_bde1.TypeTRXDataTable dataTable = new DS_bde1.TypeTRXDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11518,14 +11672,14 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)";
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd.TypeTRXDataTable dataTable) {
+        public virtual int Update(DS_bde1.TypeTRXDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DS_bd dataSet) {
+        public virtual int Update(DS_bde1 dataSet) {
             return this.Adapter.Update(dataSet, "TypeTRX");
         }
         
@@ -12040,7 +12194,7 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(DS_bd dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DS_bde1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._clientTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -12158,7 +12312,7 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(DS_bd dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DS_bde1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._clientTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Client.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -12264,7 +12418,7 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(DS_bd dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DS_bde1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._tRXTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.TRX.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -12394,7 +12548,7 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)";
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(DS_bd dataSet) {
+        public virtual int UpdateAll(DS_bde1 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

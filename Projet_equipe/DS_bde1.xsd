@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DS_bd" targetNamespace="http://tempuri.org/DS_bd.xsd" xmlns:mstns="http://tempuri.org/DS_bd.xsd" xmlns="http://tempuri.org/DS_bd.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DS_bde1" targetNamespace="http://tempuri.org/DS_bde1.xsd" xmlns:mstns="http://tempuri.org/DS_bde1.xsd" xmlns="http://tempuri.org/DS_bde1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -512,7 +512,7 @@ SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM Reservation WHERE (IdR
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM dbo.Reservation</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -548,7 +548,16 @@ SELECT IdReser, DateReser, DateDebut, DateFin, IdCli FROM Reservation WHERE (IdR
               <Mapping SourceColumn="DateFin" DataSetColumn="DateFin" />
               <Mapping SourceColumn="IdCli" DataSetColumn="IdCli" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="h18equipe5ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Reservation.DateDebut, Reservation.DateFin, Reservation.DateReser, Reservation.IdCli, Reservation.IdReser, Client.Nom, Client.Adresse, Client.Telephone, Client.NoCarte, Client.TypeCarte, Client.DatExp FROM Reservation INNER JOIN Client ON Reservation.IdCli = Client.IdCli ORDER BY Reservation.IdReser</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TRXTableAdapter" GeneratorDataComponentClassName="TRXTableAdapter" Name="TRX" UserDataComponentName="TRXTableAdapter">
             <MainSource>
@@ -760,7 +769,7 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)</C
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DS_bd" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DS_bd" msprop:Generator_UserDSName="DS_bd">
+  <xs:element name="DS_bde1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DS_bde1" msprop:Generator_UserDSName="DS_bde1">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Arrive" msprop:Generator_TableClassName="ArriveDataTable" msprop:Generator_TableVarName="tableArrive" msprop:Generator_RowChangedName="ArriveRowChanged" msprop:Generator_TablePropName="Arrive" msprop:Generator_RowDeletingName="ArriveRowDeleting" msprop:Generator_RowChangingName="ArriveRowChanging" msprop:Generator_RowEvHandlerName="ArriveRowChangeEventHandler" msprop:Generator_RowDeletedName="ArriveRowDeleted" msprop:Generator_RowClassName="ArriveRow" msprop:Generator_UserTableName="Arrive" msprop:Generator_RowEvArgName="ArriveRowChangeEvent">
@@ -840,6 +849,9 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)</C
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="IdReser" msprop:Generator_ColumnVarNameInTable="columnIdReser" msprop:Generator_ColumnPropNameInRow="IdReser" msprop:Generator_ColumnPropNameInTable="IdReserColumn" msprop:Generator_UserColumnName="IdReser" type="xs:string" minOccurs="0" />
+              <xs:element name="DescTyp" msprop:Generator_ColumnVarNameInTable="columnDescTyp" msprop:Generator_ColumnPropNameInRow="DescTyp" msprop:Generator_ColumnPropNameInTable="DescTypColumn" msprop:Generator_UserColumnName="DescTyp" type="xs:string" minOccurs="0" />
+              <xs:element name="Attribuee" msprop:Generator_ColumnVarNameInTable="columnAttribuee" msprop:Generator_ColumnPropNameInRow="Attribuee" msprop:Generator_ColumnPropNameInTable="AttribueeColumn" msprop:Generator_UserColumnName="Attribuee" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
