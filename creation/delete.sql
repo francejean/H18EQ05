@@ -1,0 +1,11 @@
+delete from TRX;
+delete from Depart;
+delete from Arrive;
+delete from Ayant;
+delete from Reservation;
+delete from Chambre;
+delete from TypeTRX;
+delete from Commodite;
+delete from Localisation;
+delete from TypeCham;
+delete from Client;
