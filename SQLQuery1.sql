@@ -1,0 +1,1 @@
+﻿INSERT INTO omg VALUES (1);
