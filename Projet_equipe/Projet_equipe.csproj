@@ -46,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DS_bd.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_bd.xsd</DependentUpon>
+    </Compile>
     <Compile Include="f_accueil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -85,6 +90,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DS_bd.xsc">
+      <DependentUpon>DS_bd.xsd</DependentUpon>
+    </None>
+    <None Include="DS_bd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_bd.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DS_bd.xss">
+      <DependentUpon>DS_bd.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
