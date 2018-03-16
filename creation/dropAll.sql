@@ -1,0 +1,12 @@
+﻿drop table TRX;
+drop table Depart;
+drop table Arrive;
+drop table Ayant;
+drop table De;
+drop table Reservation;
+drop table Chambre;
+drop table TypeTRX;
+drop table Commodite;
+drop table Localisation;
+drop table TypeCham;
+drop table Client;

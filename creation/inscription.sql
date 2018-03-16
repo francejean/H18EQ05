@@ -30,8 +30,8 @@ insert into Localisation values ('SM','Près de la Salle à Manger');
 
 --insertion client
 --insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('','','','','','','');
-insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('Beliveau','28','8191112222','1111222233334444','visa','',0);
-insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('Laforme','50','8193334444','5555666677778888','mastercard','',0);
+insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('Beliveau','28','8191112222','1111222233334444','visa',getdate()+200,0);
+insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('Laforme','50','8193334444','5555666677778888','mastercard',getdate()+200,0);
 
 --insertion type trx
 --insert into TypeTRX values ('','','');

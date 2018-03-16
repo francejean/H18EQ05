@@ -1,10 +1,6 @@
-drop database if exists test; --changer le nom de la base de donnée
-create database test;
-use test;
-
-create table Client
+﻿create table Client
 (
-	IdCli int not NULL auto_increment,
+	IdCli int not NULL IDENTITY(1,1),
 	Nom varchar(25) NULL,
 	Adresse varchar(25) NULL,
 	Telephone varchar(10) NULL,
@@ -13,33 +9,29 @@ create table Client
 	DatExp date NULL,
 	SoldeDu decimal(12,2) NULL,
 	primary key(IdCli)
-)
-ENGINE=INNODB;
+);
 
 create table TypeCham
 (
 	CodTypChan varchar(2) not NULL,
 	DescTyp varchar(25) NULL,
-	NbDispo int(3) NULL,
+	NbDispo int NULL,
 	primary key(CodTypChan)
-)
-ENGINE=INNODB;
+);
 
 create table Localisation
 (
 	CodLoc varchar(2) not NULL,
 	DescLoc varchar(25) NULL,
 	primary key(CodLoc)
-)
-ENGINE=INNODB;
+);
 
 create table Commodite
 (
 	CodCom varchar(2) not NULL,
 	DescCom varchar(25) NULL,
 	primary key(CodCom)
-)
-ENGINE=INNODB;
+);
 
 create table TypeTRX
 (
@@ -47,8 +39,7 @@ create table TypeTRX
 	DescTrx varchar(25) NULL,
 	Nature varchar(2) NULL,
 	primary key(CodTypTrx)
-)
-ENGINE=INNODB;
+);
 
 create table Chambre
 (
@@ -62,20 +53,18 @@ create table Chambre
 	primary key(NoCham),
 	foreign key(CodLoc) references Localisation(CodLoc),
 	foreign key(CodTypChan) references TypeCham(CodTypChan)
-)
-ENGINE=INNODB;
+);
 
 create table Reservation
 (
-	IdReser int not NULL auto_increment,
+	IdReser int not NULL IDENTITY(1,1),
 	DateReser date NULL,
 	DateDebut date NULL,
 	DateFin date NULL,
 	IdCli int NULL,
 	primary key(IdReser),
 	foreign key(IdCli) references Client(IdCli)
-)
-ENGINE=INNODB;
+);
 
 create table Ayant
 (
@@ -83,8 +72,7 @@ create table Ayant
 	CodCom varchar(2) NULL,
 	foreign key(NoCham) references Chambre(NoCham),
 	foreign key(CodCom) references Commodite(CodCom)
-)
-ENGINE=INNODB;
+);
 
 create table De
 (
@@ -93,12 +81,11 @@ create table De
 	NoCham varchar(3) NULL,
 	foreign key(IdReser) references Reservation(IdReser),
 	foreign key(NoCham) references Chambre(NoCham)
-)
-ENGINE=INNODB;
+);
 
 create table Arrive
 (
-	IdArrive int not NULL auto_increment,
+	IdArrive int not NULL IDENTITY(1,1),
 	DateArrive date NULL,
 	IdCli int NULL,
 	IdReser int NULL,
@@ -107,12 +94,11 @@ create table Arrive
 	foreign key(IdCli) references Client(IdCli),
 	foreign key(IdReser) references Reservation(IdReser),
 	foreign key(NoCham) references Chambre(NoCham)
-)
-ENGINE=INNODB;
+);
 
 create table Depart
 (
-	IdDepart int not NULL auto_increment,
+	IdDepart int not NULL IDENTITY(1,1),
 	DateDepart date NULL,
 	ConfirmerPar varchar(2) NULL,
 	IdReser int NULL,
@@ -122,12 +108,11 @@ create table Depart
 	foreign key(IdReser) references Reservation(IdReser),
 	foreign key(NoCham) references Chambre(NoCham),
 	foreign key(IdCli) references Client(IdCli)
-)
-ENGINE=INNODB;
+);
 
 create table TRX
 (
-	IdTrx int not NULL auto_increment,
+	IdTrx int not NULL IDENTITY(1,1),
 	DateTrx date NULL,
 	MontantTrx decimal(10,2) NULL,
 	Reportee tinyint NULL,
@@ -140,5 +125,4 @@ create table TRX
 	foreign key(IdReser) references Reservation(IdReser),
 	foreign key(NoCham) references Chambre(NoCham),
 	foreign key(IdCli) references Client(IdCli)
-)
-ENGINE=INNODB;
+);

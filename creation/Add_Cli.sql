@@ -1,6 +1,5 @@
-DELIMITER |
-CREATE TRIGGER Add_Cli AFTER INSERT ON Client FOR EACH ROW
-BEGIN
-update Client set SoldeDu=0 where Client.IdCli=NEW.IdCli;
-END |
-DELIMITER ;
+CREATE TRIGGER Add_Cli
+ON Client
+AFTER INSERT
+AS
+update Client set SoldeDu=0 from Client as c join inserted as i on c.IdCli=i.IdCli where c.IdCli=i.IdCli;
