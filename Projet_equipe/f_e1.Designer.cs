@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_dernier = new System.Windows.Forms.Button();
             this.btn_suivant = new System.Windows.Forms.Button();
             this.btn_precedent = new System.Windows.Forms.Button();
@@ -42,7 +43,6 @@
             this.btn_modifier = new System.Windows.Forms.Button();
             this.btn_ajouter = new System.Windows.Forms.Button();
             this.btn_lister = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +53,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(785, 428);
             this.panel1.TabIndex = 25;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(81, 38);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 0;
             // 
             // btn_dernier
             // 
@@ -175,13 +182,6 @@
             this.btn_lister.TabIndex = 26;
             this.btn_lister.Text = "Lister";
             this.btn_lister.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(198, 79);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 0;
             // 
             // f_e1
             // 
