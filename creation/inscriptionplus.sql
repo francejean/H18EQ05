@@ -16,4 +16,3 @@ insert into De values (1,'1','110');
 insert into De values (0,'2','201');
 insert into De values (1,'2','555');
 insert into De values (0,'3','405');
-insert into De values (0,'1','201');

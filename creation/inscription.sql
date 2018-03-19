@@ -32,6 +32,8 @@ insert into Localisation values ('SM','Près de la Salle à Manger');
 --insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('','','','','','','');
 insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('Beliveau','28','8191112222','1111222233334444','visa',getdate()+200,0);
 insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('Laforme','50','8193334444','5555666677778888','mastercard',getdate()+200,0);
+insert into Client (Nom,Adresse,Telephone,NoCarte,TypeCarte,DatExp,SoldeDu) values ('Réjean','5915 Jean-Cormier','4189999999','255248963574','Mastercard',getdate()+200,550);
+
 
 --insertion type trx
 --insert into TypeTRX values ('','','');
@@ -50,14 +52,22 @@ insert into TypeTRX values ('60','Paiement','CR');
 insert into Chambre values ('201','02',75.25,1,'Chambre branché pour non fumeur','AR','LK');
 insert into Chambre values ('405','04',96.73,1,'Chambre VIP','VM','ST');
 insert into Chambre values ('110','01',50.93,0,'Chambre parfaite pour handicapé','AS','1D');
+insert into Chambre values ('555','05',203.99,1,'Grande chambre pour la famille','SM','ST');
 
 --insertion reservation
 --insert into Reservation (DateReser,DateDebut,DateFin,IdCli) values (getdate(),getdate(),getdate(),'');
 insert into Reservation (DateReser,DateDebut,DateFin,IdCli) values (getdate()-22,getdate()-15,getdate()-1,'1');
+insert into Reservation (DateReser,DateDebut,DateFin,IdCli) values (getdate()-50,getdate()-42,getdate()-1,'2');
+insert into Reservation (DateReser,DateDebut,DateFin,IdCli) values (getdate()+22,getdate()+27,getdate()-1,'3');
 
 --insertion de
 --insert into De values ('','','');
 insert into De values (1,'1','405');
+insert into De values (0,'1','201');
+insert into De values (1,'1','110');
+insert into De values (0,'2','201');
+insert into De values (1,'2','555');
+insert into De values (0,'3','405');
 
 --insertion ayant
 --insert into Ayant values ('','');
