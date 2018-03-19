@@ -31,7 +31,28 @@
             this.components = new System.ComponentModel.Container();
             this.btn_lister = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TxT_Cham = new System.Windows.Forms.TextBox();
+            this.dg_selecteur = new System.Windows.Forms.DataGridView();
+            this.BS_Ayant = new System.Windows.Forms.BindingSource(this.components);
+            this.BS_Chambre = new System.Windows.Forms.BindingSource(this.components);
+            this.DS_bd = new Projet_equipe.DS_bd();
+            this.tb_Prix = new System.Windows.Forms.TextBox();
+            this.tb_Memo = new System.Windows.Forms.TextBox();
+            this.tb_D_Loc = new System.Windows.Forms.TextBox();
+            this.tb_D_Type = new System.Windows.Forms.TextBox();
+            this.tb_Type = new System.Windows.Forms.TextBox();
+            this.tb_Loc = new System.Windows.Forms.TextBox();
+            this.tb_Etat = new System.Windows.Forms.TextBox();
+            this.tb_Etage = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.tb_Cham = new System.Windows.Forms.TextBox();
             this.btn_dernier = new System.Windows.Forms.Button();
             this.btn_suivant = new System.Windows.Forms.Button();
             this.btn_precedent = new System.Windows.Forms.Button();
@@ -44,67 +65,49 @@
             this.btn_supprimer = new System.Windows.Forms.Button();
             this.btn_modifier = new System.Windows.Forms.Button();
             this.btn_ajouter = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.TxT_Etage = new System.Windows.Forms.TextBox();
-            this.TxT_Etat = new System.Windows.Forms.TextBox();
-            this.TxT_Loc = new System.Windows.Forms.TextBox();
-            this.TxT_Type = new System.Windows.Forms.TextBox();
-            this.D_Type = new System.Windows.Forms.TextBox();
-            this.D_Loc = new System.Windows.Forms.TextBox();
-            this.TxT_Memo = new System.Windows.Forms.TextBox();
-            this.TxT_Prix = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.DS_bd = new Projet_equipe.DS_bd();
             this.TA_Chambre = new Projet_equipe.DS_bdTableAdapters.ChambreTableAdapter();
-            this.BS_Chambre = new System.Windows.Forms.BindingSource(this.components);
             this.TA_Ayant = new Projet_equipe.DS_bdTableAdapters.AyantTableAdapter();
-            this.BS_Ayant = new System.Windows.Forms.BindingSource(this.components);
             this.TA_Comm = new Projet_equipe.DS_bdTableAdapters.CommoditeTableAdapter();
             this.BS_Comm = new System.Windows.Forms.BindingSource(this.components);
             this.TA_Loc = new Projet_equipe.DS_bdTableAdapters.LocalisationTableAdapter();
             this.BS_Loc = new System.Windows.Forms.BindingSource(this.components);
             this.TA_T_Cham = new Projet_equipe.DS_bdTableAdapters.TypeChamTableAdapter();
             this.BS_T_Cham = new System.Windows.Forms.BindingSource(this.components);
-            this.noChamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codComDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BS_Ayantt = new System.Windows.Forms.BindingSource(this.components);
+            this.CodCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_bd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Chambre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_selecteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayant)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Chambre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_bd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Comm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Loc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_T_Cham)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Ayantt)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_lister
             // 
+            this.btn_lister.Enabled = false;
             this.btn_lister.Location = new System.Drawing.Point(339, 9);
             this.btn_lister.Name = "btn_lister";
             this.btn_lister.Size = new System.Drawing.Size(75, 23);
             this.btn_lister.TabIndex = 40;
-            this.btn_lister.Text = "Lister";
+            this.btn_lister.Text = "En dév";
             this.btn_lister.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Controls.Add(this.TxT_Prix);
-            this.panel1.Controls.Add(this.TxT_Memo);
-            this.panel1.Controls.Add(this.D_Loc);
-            this.panel1.Controls.Add(this.D_Type);
-            this.panel1.Controls.Add(this.TxT_Type);
-            this.panel1.Controls.Add(this.TxT_Loc);
-            this.panel1.Controls.Add(this.TxT_Etat);
-            this.panel1.Controls.Add(this.TxT_Etage);
+            this.panel1.Controls.Add(this.dg_selecteur);
+            this.panel1.Controls.Add(this.tb_Prix);
+            this.panel1.Controls.Add(this.tb_Memo);
+            this.panel1.Controls.Add(this.tb_D_Loc);
+            this.panel1.Controls.Add(this.tb_D_Type);
+            this.panel1.Controls.Add(this.tb_Type);
+            this.panel1.Controls.Add(this.tb_Loc);
+            this.panel1.Controls.Add(this.tb_Etat);
+            this.panel1.Controls.Add(this.tb_Etage);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
@@ -114,18 +117,196 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.TxT_Cham);
+            this.panel1.Controls.Add(this.tb_Cham);
             this.panel1.Location = new System.Drawing.Point(12, 39);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(785, 428);
             this.panel1.TabIndex = 39;
             // 
-            // TxT_Cham
+            // dg_selecteur
             // 
-            this.TxT_Cham.Location = new System.Drawing.Point(104, 29);
-            this.TxT_Cham.Name = "TxT_Cham";
-            this.TxT_Cham.Size = new System.Drawing.Size(100, 20);
-            this.TxT_Cham.TabIndex = 0;
+            this.dg_selecteur.AllowUserToAddRows = false;
+            this.dg_selecteur.AllowUserToDeleteRows = false;
+            this.dg_selecteur.AutoGenerateColumns = false;
+            this.dg_selecteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dg_selecteur.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CodCom,
+            this.DescCom});
+            this.dg_selecteur.DataSource = this.BS_Ayant;
+            this.dg_selecteur.Location = new System.Drawing.Point(17, 194);
+            this.dg_selecteur.Name = "dg_selecteur";
+            this.dg_selecteur.ReadOnly = true;
+            this.dg_selecteur.Size = new System.Drawing.Size(752, 208);
+            this.dg_selecteur.TabIndex = 18;
+            // 
+            // BS_Ayant
+            // 
+            this.BS_Ayant.DataMember = "FK__Ayant__NoCham__6C190EBB";
+            this.BS_Ayant.DataSource = this.BS_Chambre;
+            // 
+            // BS_Chambre
+            // 
+            this.BS_Chambre.DataMember = "Chambre";
+            this.BS_Chambre.DataSource = this.DS_bd;
+            // 
+            // DS_bd
+            // 
+            this.DS_bd.DataSetName = "DS_bd";
+            this.DS_bd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tb_Prix
+            // 
+            this.tb_Prix.Location = new System.Drawing.Point(293, 100);
+            this.tb_Prix.Name = "tb_Prix";
+            this.tb_Prix.ReadOnly = true;
+            this.tb_Prix.Size = new System.Drawing.Size(100, 20);
+            this.tb_Prix.TabIndex = 17;
+            // 
+            // tb_Memo
+            // 
+            this.tb_Memo.Location = new System.Drawing.Point(446, 149);
+            this.tb_Memo.Name = "tb_Memo";
+            this.tb_Memo.ReadOnly = true;
+            this.tb_Memo.Size = new System.Drawing.Size(323, 20);
+            this.tb_Memo.TabIndex = 16;
+            // 
+            // tb_D_Loc
+            // 
+            this.tb_D_Loc.Location = new System.Drawing.Point(550, 69);
+            this.tb_D_Loc.Name = "tb_D_Loc";
+            this.tb_D_Loc.ReadOnly = true;
+            this.tb_D_Loc.Size = new System.Drawing.Size(100, 20);
+            this.tb_D_Loc.TabIndex = 15;
+            // 
+            // tb_D_Type
+            // 
+            this.tb_D_Type.Location = new System.Drawing.Point(550, 35);
+            this.tb_D_Type.Name = "tb_D_Type";
+            this.tb_D_Type.ReadOnly = true;
+            this.tb_D_Type.Size = new System.Drawing.Size(100, 20);
+            this.tb_D_Type.TabIndex = 14;
+            // 
+            // tb_Type
+            // 
+            this.tb_Type.Location = new System.Drawing.Point(360, 29);
+            this.tb_Type.Name = "tb_Type";
+            this.tb_Type.ReadOnly = true;
+            this.tb_Type.Size = new System.Drawing.Size(100, 20);
+            this.tb_Type.TabIndex = 13;
+            // 
+            // tb_Loc
+            // 
+            this.tb_Loc.Location = new System.Drawing.Point(360, 69);
+            this.tb_Loc.Name = "tb_Loc";
+            this.tb_Loc.ReadOnly = true;
+            this.tb_Loc.Size = new System.Drawing.Size(100, 20);
+            this.tb_Loc.TabIndex = 12;
+            // 
+            // tb_Etat
+            // 
+            this.tb_Etat.Location = new System.Drawing.Point(104, 103);
+            this.tb_Etat.Name = "tb_Etat";
+            this.tb_Etat.ReadOnly = true;
+            this.tb_Etat.Size = new System.Drawing.Size(100, 20);
+            this.tb_Etat.TabIndex = 11;
+            // 
+            // tb_Etage
+            // 
+            this.tb_Etage.Location = new System.Drawing.Point(104, 69);
+            this.tb_Etage.Name = "tb_Etage";
+            this.tb_Etage.ReadOnly = true;
+            this.tb_Etage.Size = new System.Drawing.Size(100, 20);
+            this.tb_Etage.TabIndex = 10;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(443, 132);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(42, 13);
+            this.label9.TabIndex = 9;
+            this.label9.Text = "Mémo :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(505, 69);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 13);
+            this.label8.TabIndex = 8;
+            this.label8.Text = "Desc :";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(505, 35);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(38, 13);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Desc :";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(257, 103);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Prix :";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(257, 69);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(97, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Code Localisation :";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(257, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Code Type :";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(38, 103);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "État :";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(38, 69);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Étage :";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(38, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "No. Cham :";
+            // 
+            // tb_Cham
+            // 
+            this.tb_Cham.Location = new System.Drawing.Point(104, 29);
+            this.tb_Cham.Name = "tb_Cham";
+            this.tb_Cham.ReadOnly = true;
+            this.tb_Cham.Size = new System.Drawing.Size(100, 20);
+            this.tb_Cham.TabIndex = 0;
+            this.tb_Cham.DoubleClick += new System.EventHandler(this.TxT_Cham_DoubleClick);
             // 
             // btn_dernier
             // 
@@ -179,33 +360,37 @@
             // 
             // btn_annuler
             // 
+            this.btn_annuler.Enabled = false;
             this.btn_annuler.Location = new System.Drawing.Point(640, 9);
             this.btn_annuler.Name = "btn_annuler";
             this.btn_annuler.Size = new System.Drawing.Size(75, 23);
             this.btn_annuler.TabIndex = 33;
-            this.btn_annuler.Text = "Annuler";
+            this.btn_annuler.Text = "En dév";
             this.btn_annuler.UseVisualStyleBackColor = true;
             // 
             // btn_save
             // 
+            this.btn_save.Enabled = false;
             this.btn_save.Location = new System.Drawing.Point(558, 9);
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 32;
-            this.btn_save.Text = "Sauvegarde";
+            this.btn_save.Text = "En dév";
             this.btn_save.UseVisualStyleBackColor = true;
             // 
             // btn_liste
             // 
+            this.btn_liste.Enabled = false;
             this.btn_liste.Location = new System.Drawing.Point(476, 9);
             this.btn_liste.Name = "btn_liste";
             this.btn_liste.Size = new System.Drawing.Size(75, 23);
             this.btn_liste.TabIndex = 31;
-            this.btn_liste.Text = "Liste";
+            this.btn_liste.Text = "En dév";
             this.btn_liste.UseVisualStyleBackColor = true;
             // 
             // btn_consulter
             // 
+            this.btn_consulter.Enabled = false;
             this.btn_consulter.Location = new System.Drawing.Point(257, 9);
             this.btn_consulter.Name = "btn_consulter";
             this.btn_consulter.Size = new System.Drawing.Size(75, 23);
@@ -215,203 +400,41 @@
             // 
             // btn_supprimer
             // 
+            this.btn_supprimer.Enabled = false;
             this.btn_supprimer.Location = new System.Drawing.Point(175, 9);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(75, 23);
             this.btn_supprimer.TabIndex = 29;
-            this.btn_supprimer.Text = "Supprimer";
+            this.btn_supprimer.Text = "En dév";
             this.btn_supprimer.UseVisualStyleBackColor = true;
             // 
             // btn_modifier
             // 
+            this.btn_modifier.Enabled = false;
             this.btn_modifier.Location = new System.Drawing.Point(93, 9);
             this.btn_modifier.Name = "btn_modifier";
             this.btn_modifier.Size = new System.Drawing.Size(75, 23);
             this.btn_modifier.TabIndex = 28;
-            this.btn_modifier.Text = "Modifier";
+            this.btn_modifier.Text = "En dév";
             this.btn_modifier.UseVisualStyleBackColor = true;
             // 
             // btn_ajouter
             // 
+            this.btn_ajouter.Enabled = false;
             this.btn_ajouter.Location = new System.Drawing.Point(12, 9);
             this.btn_ajouter.Name = "btn_ajouter";
             this.btn_ajouter.Size = new System.Drawing.Size(75, 23);
             this.btn_ajouter.TabIndex = 27;
-            this.btn_ajouter.Text = "Ajouter";
+            this.btn_ajouter.Text = "En dév";
             this.btn_ajouter.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "No. Cham :";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(38, 69);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Étage :";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(38, 103);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "État :";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(257, 32);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 13);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Code Type :";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(257, 69);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Code Localisation :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(257, 103);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Prix :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(505, 35);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(38, 13);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "Desc :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(505, 69);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 13);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Desc :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(443, 132);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(42, 13);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Mémo :";
-            // 
-            // TxT_Etage
-            // 
-            this.TxT_Etage.Location = new System.Drawing.Point(104, 69);
-            this.TxT_Etage.Name = "TxT_Etage";
-            this.TxT_Etage.Size = new System.Drawing.Size(100, 20);
-            this.TxT_Etage.TabIndex = 10;
-            // 
-            // TxT_Etat
-            // 
-            this.TxT_Etat.Location = new System.Drawing.Point(104, 103);
-            this.TxT_Etat.Name = "TxT_Etat";
-            this.TxT_Etat.Size = new System.Drawing.Size(100, 20);
-            this.TxT_Etat.TabIndex = 11;
-            // 
-            // TxT_Loc
-            // 
-            this.TxT_Loc.Location = new System.Drawing.Point(360, 69);
-            this.TxT_Loc.Name = "TxT_Loc";
-            this.TxT_Loc.Size = new System.Drawing.Size(100, 20);
-            this.TxT_Loc.TabIndex = 12;
-            // 
-            // TxT_Type
-            // 
-            this.TxT_Type.Location = new System.Drawing.Point(360, 29);
-            this.TxT_Type.Name = "TxT_Type";
-            this.TxT_Type.Size = new System.Drawing.Size(100, 20);
-            this.TxT_Type.TabIndex = 13;
-            // 
-            // D_Type
-            // 
-            this.D_Type.Location = new System.Drawing.Point(550, 35);
-            this.D_Type.Name = "D_Type";
-            this.D_Type.Size = new System.Drawing.Size(100, 20);
-            this.D_Type.TabIndex = 14;
-            // 
-            // D_Loc
-            // 
-            this.D_Loc.Location = new System.Drawing.Point(550, 69);
-            this.D_Loc.Name = "D_Loc";
-            this.D_Loc.Size = new System.Drawing.Size(100, 20);
-            this.D_Loc.TabIndex = 15;
-            // 
-            // TxT_Memo
-            // 
-            this.TxT_Memo.Location = new System.Drawing.Point(446, 149);
-            this.TxT_Memo.Name = "TxT_Memo";
-            this.TxT_Memo.Size = new System.Drawing.Size(323, 20);
-            this.TxT_Memo.TabIndex = 16;
-            // 
-            // TxT_Prix
-            // 
-            this.TxT_Prix.Location = new System.Drawing.Point(293, 100);
-            this.TxT_Prix.Name = "TxT_Prix";
-            this.TxT_Prix.Size = new System.Drawing.Size(100, 20);
-            this.TxT_Prix.TabIndex = 17;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.noChamDataGridViewTextBoxColumn,
-            this.codComDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.BS_Ayant;
-            this.dataGridView1.Location = new System.Drawing.Point(17, 194);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(752, 208);
-            this.dataGridView1.TabIndex = 18;
-            // 
-            // DS_bd
-            // 
-            this.DS_bd.DataSetName = "DS_bd";
-            this.DS_bd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // TA_Chambre
             // 
             this.TA_Chambre.ClearBeforeFill = true;
             // 
-            // BS_Chambre
-            // 
-            this.BS_Chambre.DataMember = "Chambre";
-            this.BS_Chambre.DataSource = this.DS_bd;
-            // 
             // TA_Ayant
             // 
             this.TA_Ayant.ClearBeforeFill = true;
-            // 
-            // BS_Ayant
-            // 
-            this.BS_Ayant.DataMember = "Ayant";
-            this.BS_Ayant.DataSource = this.DS_bd;
             // 
             // TA_Comm
             // 
@@ -440,17 +463,26 @@
             this.BS_T_Cham.DataMember = "TypeCham";
             this.BS_T_Cham.DataSource = this.DS_bd;
             // 
-            // noChamDataGridViewTextBoxColumn
+            // BS_Ayantt
             // 
-            this.noChamDataGridViewTextBoxColumn.DataPropertyName = "NoCham";
-            this.noChamDataGridViewTextBoxColumn.HeaderText = "NoCham";
-            this.noChamDataGridViewTextBoxColumn.Name = "noChamDataGridViewTextBoxColumn";
+            this.BS_Ayantt.DataMember = "Ayant";
+            this.BS_Ayantt.DataSource = this.DS_bd;
             // 
-            // codComDataGridViewTextBoxColumn
+            // CodCom
             // 
-            this.codComDataGridViewTextBoxColumn.DataPropertyName = "CodCom";
-            this.codComDataGridViewTextBoxColumn.HeaderText = "CodCom";
-            this.codComDataGridViewTextBoxColumn.Name = "codComDataGridViewTextBoxColumn";
+            this.CodCom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodCom.DataPropertyName = "CodCom";
+            this.CodCom.HeaderText = "CodCom";
+            this.CodCom.Name = "CodCom";
+            this.CodCom.ReadOnly = true;
+            // 
+            // DescCom
+            // 
+            this.DescCom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DescCom.DataPropertyName = "DescCom";
+            this.DescCom.HeaderText = "DescCom";
+            this.DescCom.Name = "DescCom";
+            this.DescCom.ReadOnly = true;
             // 
             // f_e2
             // 
@@ -479,13 +511,14 @@
             this.Load += new System.EventHandler(this.f_e2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DS_bd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Chambre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dg_selecteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayant)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Chambre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DS_bd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Comm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Loc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_T_Cham)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Ayantt)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -509,14 +542,14 @@
         private DS_bd DS_bd;
         private DS_bdTableAdapters.ChambreTableAdapter TA_Chambre;
         private System.Windows.Forms.BindingSource BS_Chambre;
-        private System.Windows.Forms.TextBox TxT_Cham;
-        private System.Windows.Forms.TextBox TxT_Memo;
-        private System.Windows.Forms.TextBox D_Loc;
-        private System.Windows.Forms.TextBox D_Type;
-        private System.Windows.Forms.TextBox TxT_Type;
-        private System.Windows.Forms.TextBox TxT_Loc;
-        private System.Windows.Forms.TextBox TxT_Etat;
-        private System.Windows.Forms.TextBox TxT_Etage;
+        private System.Windows.Forms.TextBox tb_Cham;
+        private System.Windows.Forms.TextBox tb_Memo;
+        private System.Windows.Forms.TextBox tb_D_Loc;
+        private System.Windows.Forms.TextBox tb_D_Type;
+        private System.Windows.Forms.TextBox tb_Type;
+        private System.Windows.Forms.TextBox tb_Loc;
+        private System.Windows.Forms.TextBox tb_Etat;
+        private System.Windows.Forms.TextBox tb_Etage;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -526,8 +559,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TxT_Prix;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox tb_Prix;
+        private System.Windows.Forms.DataGridView dg_selecteur;
         private DS_bdTableAdapters.AyantTableAdapter TA_Ayant;
         private System.Windows.Forms.BindingSource BS_Ayant;
         private DS_bdTableAdapters.CommoditeTableAdapter TA_Comm;
@@ -536,7 +569,8 @@
         private System.Windows.Forms.BindingSource BS_Loc;
         private DS_bdTableAdapters.TypeChamTableAdapter TA_T_Cham;
         private System.Windows.Forms.BindingSource BS_T_Cham;
-        private System.Windows.Forms.DataGridViewTextBoxColumn noChamDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codComDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource BS_Ayantt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodCom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DescCom;
     }
 }
