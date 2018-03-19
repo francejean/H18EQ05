@@ -26,18 +26,9 @@ namespace Projet_equipe.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-DTVE0FK;Initial Catalog=test;Integrated Security=True")]
-        public string testConnectionString {
-            get {
-                return ((string)(this["testConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=mssql.local.shawinigan.info;Initial Catalog=h18equipe5;User ID=h18equ" +
-            "ipe5etd2")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=test;Integrated Security=True;" +
+            "Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=R" +
+            "eadWrite;MultiSubnetFailover=False")]
         public string h18equipe5ConnectionString {
             get {
                 return ((string)(this["h18equipe5ConnectionString"]));
