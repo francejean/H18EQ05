@@ -46,8 +46,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dg_reservation = new System.Windows.Forms.DataGridView();
-            this.deBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dS_bde1 = new Projet_equipe.DS_bde1();
             this.tb_noReservation = new System.Windows.Forms.TextBox();
             this.tb_solde = new System.Windows.Forms.TextBox();
             this.tb_expiration = new System.Windows.Forms.TextBox();
@@ -70,32 +68,35 @@
             this.btn_modifier = new System.Windows.Forms.Button();
             this.btn_ajouter = new System.Windows.Forms.Button();
             this.btn_lister = new System.Windows.Forms.Button();
+            this.BS_de = new System.Windows.Forms.BindingSource(this.components);
+            this.NoCham = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescTyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Attribuee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_reservation = new System.Windows.Forms.BindingSource(this.components);
             this.DS_bd = new Projet_equipe.DS_bde1();
+            this.idReserDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.deBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS_bde1 = new Projet_equipe.DS_bde1();
             this.BS_client = new System.Windows.Forms.BindingSource(this.components);
             this.clientTableAdapter = new Projet_equipe.DS_bde1TableAdapters.ClientTableAdapter();
             this.TA_client = new Projet_equipe.DS_bde1TableAdapters.ClientTableAdapter();
             this.TA_reservation = new Projet_equipe.DS_bde1TableAdapters.ReservationTableAdapter();
             this.TA_de = new Projet_equipe.DS_bde1TableAdapters.DeTableAdapter();
-            this.BS_de = new System.Windows.Forms.BindingSource(this.components);
             this.BS_dee = new System.Windows.Forms.BindingSource(this.components);
             this.BS_chambre = new System.Windows.Forms.BindingSource(this.components);
             this.chambreTableAdapter = new Projet_equipe.DS_bde1TableAdapters.ChambreTableAdapter();
             this.BS_typeChambre = new System.Windows.Forms.BindingSource(this.components);
             this.TA_typeChambre = new Projet_equipe.DS_bde1TableAdapters.TypeChamTableAdapter();
             this.arriveTableAdapter = new Projet_equipe.DS_bde1TableAdapters.ArriveTableAdapter();
-            this.NoCham = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescTyp = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Prix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Attribuee = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reservation)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_bde1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_de)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_reservation)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_bd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_bde1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_client)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_de)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_dee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_chambre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_typeChambre)).BeginInit();
@@ -135,21 +136,21 @@
             // 
             // dp_dateFin
             // 
-            this.dp_dateFin.Location = new System.Drawing.Point(552, 185);
+            this.dp_dateFin.Location = new System.Drawing.Point(552, 199);
             this.dp_dateFin.Name = "dp_dateFin";
             this.dp_dateFin.Size = new System.Drawing.Size(200, 20);
             this.dp_dateFin.TabIndex = 27;
             // 
             // dp_dateDebut
             // 
-            this.dp_dateDebut.Location = new System.Drawing.Point(552, 149);
+            this.dp_dateDebut.Location = new System.Drawing.Point(552, 163);
             this.dp_dateDebut.Name = "dp_dateDebut";
             this.dp_dateDebut.Size = new System.Drawing.Size(200, 20);
             this.dp_dateDebut.TabIndex = 26;
             // 
             // dp_reserveLe
             // 
-            this.dp_reserveLe.Location = new System.Drawing.Point(552, 105);
+            this.dp_reserveLe.Location = new System.Drawing.Point(552, 119);
             this.dp_reserveLe.Name = "dp_reserveLe";
             this.dp_reserveLe.Size = new System.Drawing.Size(200, 20);
             this.dp_reserveLe.TabIndex = 25;
@@ -157,7 +158,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(487, 191);
+            this.label12.Location = new System.Drawing.Point(487, 205);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(59, 13);
             this.label12.TabIndex = 24;
@@ -167,7 +168,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.label11.Location = new System.Drawing.Point(471, 155);
+            this.label11.Location = new System.Drawing.Point(471, 169);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 13);
             this.label11.TabIndex = 23;
@@ -176,7 +177,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(487, 111);
+            this.label10.Location = new System.Drawing.Point(487, 125);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(58, 13);
             this.label10.TabIndex = 22;
@@ -185,7 +186,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(462, 71);
+            this.label9.Location = new System.Drawing.Point(462, 41);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(84, 13);
             this.label9.TabIndex = 21;
@@ -194,7 +195,7 @@
             // Solde
             // 
             this.Solde.AutoSize = true;
-            this.Solde.Location = new System.Drawing.Point(603, 222);
+            this.Solde.Location = new System.Drawing.Point(253, 222);
             this.Solde.Name = "Solde";
             this.Solde.Size = new System.Drawing.Size(34, 13);
             this.Solde.TabIndex = 20;
@@ -273,7 +274,8 @@
             this.NoCham,
             this.DescTyp,
             this.Prix,
-            this.Attribuee});
+            this.Attribuee,
+            this.idReserDataGridViewTextBoxColumn});
             this.dg_reservation.DataSource = this.BS_de;
             this.dg_reservation.Location = new System.Drawing.Point(4, 271);
             this.dg_reservation.Name = "dg_reservation";
@@ -281,28 +283,20 @@
             this.dg_reservation.Size = new System.Drawing.Size(778, 154);
             this.dg_reservation.TabIndex = 12;
             // 
-            // deBindingSource
-            // 
-            this.deBindingSource.DataMember = "De";
-            this.deBindingSource.DataSource = this.dS_bde1;
-            // 
-            // dS_bde1
-            // 
-            this.dS_bde1.DataSetName = "DS_bde1";
-            this.dS_bde1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tb_noReservation
             // 
-            this.tb_noReservation.Location = new System.Drawing.Point(552, 68);
+            this.tb_noReservation.Location = new System.Drawing.Point(552, 38);
             this.tb_noReservation.Name = "tb_noReservation";
+            this.tb_noReservation.ReadOnly = true;
             this.tb_noReservation.Size = new System.Drawing.Size(200, 20);
             this.tb_noReservation.TabIndex = 8;
             this.tb_noReservation.DoubleClick += new System.EventHandler(this.tb_noReservation_DoubleClick);
             // 
             // tb_solde
             // 
-            this.tb_solde.Location = new System.Drawing.Point(652, 219);
+            this.tb_solde.Location = new System.Drawing.Point(302, 219);
             this.tb_solde.Name = "tb_solde";
+            this.tb_solde.ReadOnly = true;
             this.tb_solde.Size = new System.Drawing.Size(100, 20);
             this.tb_solde.TabIndex = 7;
             // 
@@ -310,6 +304,7 @@
             // 
             this.tb_expiration.Location = new System.Drawing.Point(81, 219);
             this.tb_expiration.Name = "tb_expiration";
+            this.tb_expiration.ReadOnly = true;
             this.tb_expiration.Size = new System.Drawing.Size(100, 20);
             this.tb_expiration.TabIndex = 6;
             // 
@@ -317,6 +312,7 @@
             // 
             this.tb_typeCarte.Location = new System.Drawing.Point(81, 172);
             this.tb_typeCarte.Name = "tb_typeCarte";
+            this.tb_typeCarte.ReadOnly = true;
             this.tb_typeCarte.Size = new System.Drawing.Size(321, 20);
             this.tb_typeCarte.TabIndex = 5;
             // 
@@ -324,6 +320,7 @@
             // 
             this.tb_carte.Location = new System.Drawing.Point(258, 119);
             this.tb_carte.Name = "tb_carte";
+            this.tb_carte.ReadOnly = true;
             this.tb_carte.Size = new System.Drawing.Size(144, 20);
             this.tb_carte.TabIndex = 4;
             // 
@@ -331,6 +328,7 @@
             // 
             this.tb_telephone.Location = new System.Drawing.Point(81, 119);
             this.tb_telephone.Name = "tb_telephone";
+            this.tb_telephone.ReadOnly = true;
             this.tb_telephone.Size = new System.Drawing.Size(100, 20);
             this.tb_telephone.TabIndex = 3;
             // 
@@ -338,6 +336,7 @@
             // 
             this.tb_adresse.Location = new System.Drawing.Point(81, 75);
             this.tb_adresse.Name = "tb_adresse";
+            this.tb_adresse.ReadOnly = true;
             this.tb_adresse.Size = new System.Drawing.Size(321, 20);
             this.tb_adresse.TabIndex = 2;
             // 
@@ -345,6 +344,7 @@
             // 
             this.tb_nom.Location = new System.Drawing.Point(245, 38);
             this.tb_nom.Name = "tb_nom";
+            this.tb_nom.ReadOnly = true;
             this.tb_nom.Size = new System.Drawing.Size(157, 20);
             this.tb_nom.TabIndex = 1;
             // 
@@ -352,6 +352,7 @@
             // 
             this.tb_noClient.Location = new System.Drawing.Point(81, 38);
             this.tb_noClient.Name = "tb_noClient";
+            this.tb_noClient.ReadOnly = true;
             this.tb_noClient.Size = new System.Drawing.Size(100, 20);
             this.tb_noClient.TabIndex = 0;
             // 
@@ -478,6 +479,43 @@
             this.btn_lister.Text = "En dév";
             this.btn_lister.UseVisualStyleBackColor = true;
             // 
+            // BS_de
+            // 
+            this.BS_de.DataMember = "FK__De__IdReser__6EF57B66";
+            this.BS_de.DataSource = this.BS_reservation;
+            // 
+            // NoCham
+            // 
+            this.NoCham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NoCham.DataPropertyName = "NoCham";
+            this.NoCham.HeaderText = "NoCham";
+            this.NoCham.Name = "NoCham";
+            this.NoCham.ReadOnly = true;
+            // 
+            // DescTyp
+            // 
+            this.DescTyp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DescTyp.DataPropertyName = "DescTyp";
+            this.DescTyp.HeaderText = "DescTyp";
+            this.DescTyp.Name = "DescTyp";
+            this.DescTyp.ReadOnly = true;
+            // 
+            // Prix
+            // 
+            this.Prix.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Prix.DataPropertyName = "Prix";
+            this.Prix.HeaderText = "Prix";
+            this.Prix.Name = "Prix";
+            this.Prix.ReadOnly = true;
+            // 
+            // Attribuee
+            // 
+            this.Attribuee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Attribuee.DataPropertyName = "Attribuee";
+            this.Attribuee.HeaderText = "Attribuee";
+            this.Attribuee.Name = "Attribuee";
+            this.Attribuee.ReadOnly = true;
+            // 
             // BS_reservation
             // 
             this.BS_reservation.DataMember = "Reservation";
@@ -487,6 +525,23 @@
             // 
             this.DS_bd.DataSetName = "DS_bde1";
             this.DS_bd.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // idReserDataGridViewTextBoxColumn
+            // 
+            this.idReserDataGridViewTextBoxColumn.DataPropertyName = "IdReser";
+            this.idReserDataGridViewTextBoxColumn.HeaderText = "IdReser";
+            this.idReserDataGridViewTextBoxColumn.Name = "idReserDataGridViewTextBoxColumn";
+            this.idReserDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // deBindingSource
+            // 
+            this.deBindingSource.DataMember = "De";
+            this.deBindingSource.DataSource = this.dS_bde1;
+            // 
+            // dS_bde1
+            // 
+            this.dS_bde1.DataSetName = "DS_bde1";
+            this.dS_bde1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // BS_client
             // 
@@ -508,11 +563,6 @@
             // TA_de
             // 
             this.TA_de.ClearBeforeFill = true;
-            // 
-            // BS_de
-            // 
-            this.BS_de.DataMember = "FK__De__IdReser__6EF57B66";
-            this.BS_de.DataSource = this.BS_reservation;
             // 
             // BS_dee
             // 
@@ -541,34 +591,6 @@
             // 
             this.arriveTableAdapter.ClearBeforeFill = true;
             // 
-            // NoCham
-            // 
-            this.NoCham.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NoCham.DataPropertyName = "NoCham";
-            this.NoCham.HeaderText = "NoCham";
-            this.NoCham.Name = "NoCham";
-            // 
-            // DescTyp
-            // 
-            this.DescTyp.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DescTyp.DataPropertyName = "DescTyp";
-            this.DescTyp.HeaderText = "DescTyp";
-            this.DescTyp.Name = "DescTyp";
-            // 
-            // Prix
-            // 
-            this.Prix.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Prix.DataPropertyName = "Prix";
-            this.Prix.HeaderText = "Prix";
-            this.Prix.Name = "Prix";
-            // 
-            // Attribuee
-            // 
-            this.Attribuee.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Attribuee.DataPropertyName = "Attribuee";
-            this.Attribuee.HeaderText = "Attribuee";
-            this.Attribuee.Name = "Attribuee";
-            // 
             // f_e1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -589,6 +611,8 @@
             this.Controls.Add(this.btn_supprimer);
             this.Controls.Add(this.btn_modifier);
             this.Controls.Add(this.btn_ajouter);
+            this.MaximumSize = new System.Drawing.Size(825, 545);
+            this.MinimumSize = new System.Drawing.Size(825, 545);
             this.Name = "f_e1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Réservation";
@@ -596,12 +620,12 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_reservation)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.deBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dS_bde1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_de)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_reservation)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_bd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.deBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dS_bde1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_client)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_de)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_dee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_chambre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_typeChambre)).EndInit();
@@ -670,5 +694,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DescTyp;
         private System.Windows.Forms.DataGridViewTextBoxColumn Prix;
         private System.Windows.Forms.DataGridViewTextBoxColumn Attribuee;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idReserDataGridViewTextBoxColumn;
     }
 }
