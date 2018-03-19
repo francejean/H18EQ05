@@ -69,7 +69,8 @@ namespace Projet_equipe
                 tb_carte.DataBindings.Add("Text", BS_client, "NoCarte");
                 tb_typeCarte.DataBindings.Add("Text", BS_client, "TypeCarte");
                 tb_expiration.DataBindings.Add("Text", BS_client, "DatExp");
-                tb_solde.DataBindings.Add("Text", BS_reservation, "Solde");
+                tb_solde.DataBindings.Add("Text", BS_client, "SoldeDu");
+
             }
             catch (Exception ee)
             {
@@ -102,7 +103,7 @@ namespace Projet_equipe
             }
             this.DS_bd.Tables["De"].AcceptChanges();
 
-            this.BS_dee.MoveLast();
+            /*this.BS_dee.MoveLast();
             this.BS_reservation.MoveLast();
             this.BS_chambre.MoveLast();
 
@@ -123,7 +124,7 @@ namespace Projet_equipe
                 }
                 this.DS_bd.Tables["Reservation"].Rows[y]["Solde"] = solde;
             }
-            this.BS_reservation.MoveFirst();
+            this.BS_reservation.MoveFirst();*/
         }
 
         // Boutons first, précédent, suivant et dernier
