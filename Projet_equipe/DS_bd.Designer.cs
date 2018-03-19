@@ -1394,6 +1394,10 @@ namespace Projet_equipe {
             
             private global::System.Data.DataColumn columnCodTypChan;
             
+            private global::System.Data.DataColumn columnDescLoc;
+            
+            private global::System.Data.DataColumn columnDescTyp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ChambreDataTable() {
@@ -1485,6 +1489,22 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescLocColumn {
+                get {
+                    return this.columnDescLoc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescTypColumn {
+                get {
+                    return this.columnDescTyp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1520,7 +1540,7 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ChambreRow AddChambreRow(string NoCham, string Etage, decimal Prix, byte Etat, string Memo, LocalisationRow parentLocalisationRowByFK__Chambre__CodLoc__66603565, TypeChamRow parentTypeChamRowByFK__Chambre__CodTypC__6754599E) {
+            public ChambreRow AddChambreRow(string NoCham, string Etage, decimal Prix, byte Etat, string Memo, LocalisationRow parentLocalisationRowByFK__Chambre__CodLoc__66603565, TypeChamRow parentTypeChamRowByFK__Chambre__CodTypC__6754599E, string DescLoc, string DescTyp) {
                 ChambreRow rowChambreRow = ((ChambreRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         NoCham,
@@ -1529,7 +1549,9 @@ namespace Projet_equipe {
                         Etat,
                         Memo,
                         null,
-                        null};
+                        null,
+                        DescLoc,
+                        DescTyp};
                 if ((parentLocalisationRowByFK__Chambre__CodLoc__66603565 != null)) {
                     columnValuesArray[5] = parentLocalisationRowByFK__Chambre__CodLoc__66603565[0];
                 }
@@ -1572,6 +1594,8 @@ namespace Projet_equipe {
                 this.columnMemo = base.Columns["Memo"];
                 this.columnCodLoc = base.Columns["CodLoc"];
                 this.columnCodTypChan = base.Columns["CodTypChan"];
+                this.columnDescLoc = base.Columns["DescLoc"];
+                this.columnDescTyp = base.Columns["DescTyp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1591,6 +1615,10 @@ namespace Projet_equipe {
                 base.Columns.Add(this.columnCodLoc);
                 this.columnCodTypChan = new global::System.Data.DataColumn("CodTypChan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnCodTypChan);
+                this.columnDescLoc = new global::System.Data.DataColumn("DescLoc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescLoc);
+                this.columnDescTyp = new global::System.Data.DataColumn("DescTyp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescTyp);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnNoCham}, true));
                 this.columnNoCham.AllowDBNull = false;
@@ -4923,6 +4951,38 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescLoc {
+                get {
+                    try {
+                        return ((string)(this[this.tableChambre.DescLocColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DescLoc\' dans la table \'Chambre\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChambre.DescLocColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescTyp {
+                get {
+                    try {
+                        return ((string)(this[this.tableChambre.DescTypColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("La valeur pour la colonne \'DescTyp\' dans la table \'Chambre\' est DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChambre.DescTypColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public LocalisationRow LocalisationRow {
                 get {
                     return ((LocalisationRow)(this.GetParentRow(this.Table.ParentRelations["FK__Chambre__CodLoc__66603565"])));
@@ -5013,6 +5073,30 @@ namespace Projet_equipe {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetCodTypChanNull() {
                 this[this.tableChambre.CodTypChanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescLocNull() {
+                return this.IsNull(this.tableChambre.DescLocColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescLocNull() {
+                this[this.tableChambre.DescLocColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescTypNull() {
+                return this.IsNull(this.tableChambre.DescTypColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescTypNull() {
+                this[this.tableChambre.DescTypColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7699,11 +7783,18 @@ SELECT NoCham, Etage, Prix, Etat, Memo, CodLoc, CodTypChan FROM Chambre WHERE (N
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT NoCham, Etage, Prix, Etat, Memo, CodLoc, CodTypChan FROM dbo.Chambre";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT        Chambre.NoCham, Chambre.Etage, Chambre.Prix, Chambre.Etat, Chambre.Memo, Chambre.CodLoc, Chambre.CodTypChan, Localisation.DescLoc, TypeCham.DescTyp
+FROM            Chambre INNER JOIN
+                         Localisation ON Chambre.CodLoc = Localisation.CodLoc INNER JOIN
+                         TypeCham ON Chambre.CodTypChan = TypeCham.CodTypChan";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7725,6 +7816,30 @@ SELECT NoCham, Etage, Prix, Etat, Memo, CodLoc, CodTypChan FROM Chambre WHERE (N
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual DS_bd.ChambreDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            DS_bd.ChambreDataTable dataTable = new DS_bd.ChambreDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(DS_bd.ChambreDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual DS_bd.ChambreDataTable GetDataBy() {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
             DS_bd.ChambreDataTable dataTable = new DS_bd.ChambreDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

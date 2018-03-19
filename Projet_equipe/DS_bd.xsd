@@ -182,7 +182,19 @@ SELECT NoCham, Etage, Prix, Etat, Memo, CodLoc, CodTypChan FROM Chambre WHERE (N
               <Mapping SourceColumn="CodLoc" DataSetColumn="CodLoc" />
               <Mapping SourceColumn="CodTypChan" DataSetColumn="CodTypChan" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="h18equipe5ConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Chambre.NoCham, Chambre.Etage, Chambre.Prix, Chambre.Etat, Chambre.Memo, Chambre.CodLoc, Chambre.CodTypChan, Localisation.DescLoc, TypeCham.DescTyp
+FROM            Chambre INNER JOIN
+                         Localisation ON Chambre.CodLoc = Localisation.CodLoc INNER JOIN
+                         TypeCham ON Chambre.CodTypChan = TypeCham.CodTypChan</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ClientTableAdapter" GeneratorDataComponentClassName="ClientTableAdapter" Name="Client" UserDataComponentName="ClientTableAdapter">
             <MainSource>
@@ -840,6 +852,8 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)</C
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="DescLoc" msprop:Generator_ColumnVarNameInTable="columnDescLoc" msprop:Generator_ColumnPropNameInRow="DescLoc" msprop:Generator_ColumnPropNameInTable="DescLocColumn" msprop:Generator_UserColumnName="DescLoc" type="xs:string" minOccurs="0" />
+              <xs:element name="DescTyp" msprop:Generator_ColumnVarNameInTable="columnDescTyp" msprop:Generator_ColumnPropNameInRow="DescTyp" msprop:Generator_ColumnPropNameInTable="DescTypColumn" msprop:Generator_UserColumnName="DescTyp" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
