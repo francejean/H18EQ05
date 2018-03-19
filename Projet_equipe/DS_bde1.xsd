@@ -931,6 +931,8 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)</C
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Prix" msprop:Generator_ColumnVarNameInTable="columnPrix" msprop:Generator_ColumnPropNameInRow="Prix" msprop:Generator_ColumnPropNameInTable="PrixColumn" msprop:Generator_UserColumnName="Prix" type="xs:string" minOccurs="0" />
+              <xs:element name="DescTyp" msprop:Generator_ColumnVarNameInTable="columnDescTyp" msprop:Generator_ColumnPropNameInRow="DescTyp" msprop:Generator_ColumnPropNameInTable="DescTypColumn" msprop:Generator_UserColumnName="DescTyp" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -986,6 +988,7 @@ SELECT CodTypTrx, DescTrx, Nature FROM TypeTRX WHERE (CodTypTrx = @CodTypTrx)</C
               <xs:element name="DateDebut" msprop:Generator_ColumnVarNameInTable="columnDateDebut" msprop:Generator_ColumnPropNameInRow="DateDebut" msprop:Generator_ColumnPropNameInTable="DateDebutColumn" msprop:Generator_UserColumnName="DateDebut" type="xs:dateTime" minOccurs="0" />
               <xs:element name="DateFin" msprop:Generator_ColumnVarNameInTable="columnDateFin" msprop:Generator_ColumnPropNameInRow="DateFin" msprop:Generator_ColumnPropNameInTable="DateFinColumn" msprop:Generator_UserColumnName="DateFin" type="xs:dateTime" minOccurs="0" />
               <xs:element name="IdCli" msprop:Generator_ColumnVarNameInTable="columnIdCli" msprop:Generator_ColumnPropNameInRow="IdCli" msprop:Generator_ColumnPropNameInTable="IdCliColumn" msprop:Generator_UserColumnName="IdCli" type="xs:int" minOccurs="0" />
+              <xs:element name="Solde" msprop:Generator_ColumnVarNameInTable="columnSolde" msprop:Generator_ColumnPropNameInRow="Solde" msprop:Generator_ColumnPropNameInTable="SoldeColumn" msprop:Generator_UserColumnName="Solde" type="xs:double" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -2420,6 +2420,10 @@ namespace Projet_equipe {
             
             private global::System.Data.DataColumn columnNoCham;
             
+            private global::System.Data.DataColumn columnPrix;
+            
+            private global::System.Data.DataColumn columnDescTyp;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public DeDataTable() {
@@ -2479,6 +2483,22 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PrixColumn {
+                get {
+                    return this.columnPrix;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DescTypColumn {
+                get {
+                    return this.columnDescTyp;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2514,12 +2534,14 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public DeRow AddDeRow(byte Attribuee, ReservationRow parentReservationRowByFK__De__IdReser__6EF57B66, ChambreRow parentChambreRowByFK__De__NoCham__6FE99F9F) {
+            public DeRow AddDeRow(byte Attribuee, ReservationRow parentReservationRowByFK__De__IdReser__6EF57B66, ChambreRow parentChambreRowByFK__De__NoCham__6FE99F9F, string Prix, string DescTyp) {
                 DeRow rowDeRow = ((DeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Attribuee,
                         null,
-                        null};
+                        null,
+                        Prix,
+                        DescTyp};
                 if ((parentReservationRowByFK__De__IdReser__6EF57B66 != null)) {
                     columnValuesArray[1] = parentReservationRowByFK__De__IdReser__6EF57B66[0];
                 }
@@ -2551,6 +2573,8 @@ namespace Projet_equipe {
                 this.columnAttribuee = base.Columns["Attribuee"];
                 this.columnIdReser = base.Columns["IdReser"];
                 this.columnNoCham = base.Columns["NoCham"];
+                this.columnPrix = base.Columns["Prix"];
+                this.columnDescTyp = base.Columns["DescTyp"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2562,6 +2586,10 @@ namespace Projet_equipe {
                 base.Columns.Add(this.columnIdReser);
                 this.columnNoCham = new global::System.Data.DataColumn("NoCham", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNoCham);
+                this.columnPrix = new global::System.Data.DataColumn("Prix", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPrix);
+                this.columnDescTyp = new global::System.Data.DataColumn("DescTyp", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDescTyp);
                 this.columnNoCham.MaxLength = 3;
             }
             
@@ -3323,6 +3351,8 @@ namespace Projet_equipe {
             
             private global::System.Data.DataColumn columnIdCli;
             
+            private global::System.Data.DataColumn columnSolde;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ReservationDataTable() {
@@ -3398,6 +3428,14 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SoldeColumn {
+                get {
+                    return this.columnSolde;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3433,14 +3471,15 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ReservationRow AddReservationRow(System.DateTime DateReser, System.DateTime DateDebut, System.DateTime DateFin, ClientRow parentClientRowByFK__Reservati__IdCli__6A30C649) {
+            public ReservationRow AddReservationRow(System.DateTime DateReser, System.DateTime DateDebut, System.DateTime DateFin, ClientRow parentClientRowByFK__Reservati__IdCli__6A30C649, double Solde) {
                 ReservationRow rowReservationRow = ((ReservationRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         DateReser,
                         DateDebut,
                         DateFin,
-                        null};
+                        null,
+                        Solde};
                 if ((parentClientRowByFK__Reservati__IdCli__6A30C649 != null)) {
                     columnValuesArray[4] = parentClientRowByFK__Reservati__IdCli__6A30C649[0];
                 }
@@ -3478,6 +3517,7 @@ namespace Projet_equipe {
                 this.columnDateDebut = base.Columns["DateDebut"];
                 this.columnDateFin = base.Columns["DateFin"];
                 this.columnIdCli = base.Columns["IdCli"];
+                this.columnSolde = base.Columns["Solde"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3493,6 +3533,8 @@ namespace Projet_equipe {
                 base.Columns.Add(this.columnDateFin);
                 this.columnIdCli = new global::System.Data.DataColumn("IdCli", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnIdCli);
+                this.columnSolde = new global::System.Data.DataColumn("Solde", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSolde);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnIdReser}, true));
                 this.columnIdReser.AutoIncrement = true;
@@ -5592,6 +5634,38 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string Prix {
+                get {
+                    try {
+                        return ((string)(this[this.tableDe.PrixColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Prix\' in table \'De\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDe.PrixColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string DescTyp {
+                get {
+                    try {
+                        return ((string)(this[this.tableDe.DescTypColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'DescTyp\' in table \'De\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDe.DescTypColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ReservationRow ReservationRow {
                 get {
                     return ((ReservationRow)(this.GetParentRow(this.Table.ParentRelations["FK__De__IdReser__6EF57B66"])));
@@ -5646,6 +5720,30 @@ namespace Projet_equipe {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetNoChamNull() {
                 this[this.tableDe.NoChamColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsPrixNull() {
+                return this.IsNull(this.tableDe.PrixColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetPrixNull() {
+                this[this.tableDe.PrixColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsDescTypNull() {
+                return this.IsNull(this.tableDe.DescTypColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetDescTypNull() {
+                this[this.tableDe.DescTypColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6004,6 +6102,22 @@ namespace Projet_equipe {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double Solde {
+                get {
+                    try {
+                        return ((double)(this[this.tableReservation.SoldeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Solde\' in table \'Reservation\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableReservation.SoldeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public ClientRow ClientRow {
                 get {
                     return ((ClientRow)(this.GetParentRow(this.Table.ParentRelations["FK__Reservati__IdCli__6A30C649"])));
@@ -6059,6 +6173,18 @@ namespace Projet_equipe {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetIdCliNull() {
                 this[this.tableReservation.IdCliColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSoldeNull() {
+                return this.IsNull(this.tableReservation.SoldeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSoldeNull() {
+                this[this.tableReservation.SoldeColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -26,8 +26,7 @@ namespace Projet_equipe.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=mssql.local.shawinigan.info;Initial Catalog=h18equipe5;Persist Securi" +
-            "ty Info=True;User ID=h18equipe5etd1;Password=1927727641")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-DTVE0FK;Initial Catalog=test;Integrated Security=True")]
         public string h18equipe5ConnectionString {
             get {
                 return ((string)(this["h18equipe5ConnectionString"]));
