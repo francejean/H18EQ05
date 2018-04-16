@@ -32,6 +32,11 @@
             this.btn_lister = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dg_selecteur = new System.Windows.Forms.DataGridView();
+            this.CodCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DescCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.noChamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codComDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descComDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BS_Ayant = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Chambre = new System.Windows.Forms.BindingSource(this.components);
             this.DS_bd = new Projet_equipe.DS_bd();
@@ -74,8 +79,7 @@
             this.TA_T_Cham = new Projet_equipe.DS_bdTableAdapters.TypeChamTableAdapter();
             this.BS_T_Cham = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Ayantt = new System.Windows.Forms.BindingSource(this.components);
-            this.CodCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DescCom = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.error1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_selecteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayant)).BeginInit();
@@ -85,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Loc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_T_Cham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayantt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_lister
@@ -131,13 +136,53 @@
             this.dg_selecteur.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dg_selecteur.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CodCom,
-            this.DescCom});
+            this.DescCom,
+            this.noChamDataGridViewTextBoxColumn,
+            this.codComDataGridViewTextBoxColumn,
+            this.descComDataGridViewTextBoxColumn});
             this.dg_selecteur.DataSource = this.BS_Ayant;
             this.dg_selecteur.Location = new System.Drawing.Point(17, 194);
             this.dg_selecteur.Name = "dg_selecteur";
             this.dg_selecteur.ReadOnly = true;
             this.dg_selecteur.Size = new System.Drawing.Size(752, 208);
             this.dg_selecteur.TabIndex = 18;
+            // 
+            // CodCom
+            // 
+            this.CodCom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodCom.DataPropertyName = "CodCom";
+            this.CodCom.HeaderText = "CodCom";
+            this.CodCom.Name = "CodCom";
+            this.CodCom.ReadOnly = true;
+            // 
+            // DescCom
+            // 
+            this.DescCom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DescCom.DataPropertyName = "DescCom";
+            this.DescCom.HeaderText = "DescCom";
+            this.DescCom.Name = "DescCom";
+            this.DescCom.ReadOnly = true;
+            // 
+            // noChamDataGridViewTextBoxColumn
+            // 
+            this.noChamDataGridViewTextBoxColumn.DataPropertyName = "NoCham";
+            this.noChamDataGridViewTextBoxColumn.HeaderText = "NoCham";
+            this.noChamDataGridViewTextBoxColumn.Name = "noChamDataGridViewTextBoxColumn";
+            this.noChamDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // codComDataGridViewTextBoxColumn
+            // 
+            this.codComDataGridViewTextBoxColumn.DataPropertyName = "CodCom";
+            this.codComDataGridViewTextBoxColumn.HeaderText = "CodCom";
+            this.codComDataGridViewTextBoxColumn.Name = "codComDataGridViewTextBoxColumn";
+            this.codComDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descComDataGridViewTextBoxColumn
+            // 
+            this.descComDataGridViewTextBoxColumn.DataPropertyName = "DescCom";
+            this.descComDataGridViewTextBoxColumn.HeaderText = "DescCom";
+            this.descComDataGridViewTextBoxColumn.Name = "descComDataGridViewTextBoxColumn";
+            this.descComDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // BS_Ayant
             // 
@@ -156,17 +201,17 @@
             // 
             // tb_Prix
             // 
+            this.tb_Prix.Enabled = false;
             this.tb_Prix.Location = new System.Drawing.Point(293, 100);
             this.tb_Prix.Name = "tb_Prix";
-            this.tb_Prix.ReadOnly = true;
             this.tb_Prix.Size = new System.Drawing.Size(100, 20);
             this.tb_Prix.TabIndex = 17;
             // 
             // tb_Memo
             // 
+            this.tb_Memo.Enabled = false;
             this.tb_Memo.Location = new System.Drawing.Point(446, 149);
             this.tb_Memo.Name = "tb_Memo";
-            this.tb_Memo.ReadOnly = true;
             this.tb_Memo.Size = new System.Drawing.Size(323, 20);
             this.tb_Memo.TabIndex = 16;
             // 
@@ -188,35 +233,37 @@
             // 
             // tb_Type
             // 
+            this.tb_Type.Enabled = false;
             this.tb_Type.Location = new System.Drawing.Point(360, 29);
             this.tb_Type.Name = "tb_Type";
-            this.tb_Type.ReadOnly = true;
             this.tb_Type.Size = new System.Drawing.Size(100, 20);
             this.tb_Type.TabIndex = 13;
+            this.tb_Type.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.tb_Type_MouseDoubleClick);
             // 
             // tb_Loc
             // 
+            this.tb_Loc.Enabled = false;
             this.tb_Loc.Location = new System.Drawing.Point(360, 69);
             this.tb_Loc.Name = "tb_Loc";
-            this.tb_Loc.ReadOnly = true;
             this.tb_Loc.Size = new System.Drawing.Size(100, 20);
             this.tb_Loc.TabIndex = 12;
             // 
             // tb_Etat
             // 
+            this.tb_Etat.Enabled = false;
             this.tb_Etat.Location = new System.Drawing.Point(104, 103);
             this.tb_Etat.Name = "tb_Etat";
-            this.tb_Etat.ReadOnly = true;
             this.tb_Etat.Size = new System.Drawing.Size(100, 20);
             this.tb_Etat.TabIndex = 11;
             // 
             // tb_Etage
             // 
+            this.tb_Etage.Enabled = false;
             this.tb_Etage.Location = new System.Drawing.Point(104, 69);
             this.tb_Etage.Name = "tb_Etage";
-            this.tb_Etage.ReadOnly = true;
             this.tb_Etage.Size = new System.Drawing.Size(100, 20);
             this.tb_Etage.TabIndex = 10;
+            this.tb_Etage.Validating += new System.ComponentModel.CancelEventHandler(this.tb_Etage_Validating);
             // 
             // label9
             // 
@@ -307,6 +354,7 @@
             this.tb_Cham.Size = new System.Drawing.Size(100, 20);
             this.tb_Cham.TabIndex = 0;
             this.tb_Cham.DoubleClick += new System.EventHandler(this.TxT_Cham_DoubleClick);
+            this.tb_Cham.Validating += new System.ComponentModel.CancelEventHandler(this.tb_Cham_Validating);
             // 
             // btn_dernier
             // 
@@ -365,8 +413,9 @@
             this.btn_annuler.Name = "btn_annuler";
             this.btn_annuler.Size = new System.Drawing.Size(75, 23);
             this.btn_annuler.TabIndex = 33;
-            this.btn_annuler.Text = "En dév";
+            this.btn_annuler.Text = "Annuler";
             this.btn_annuler.UseVisualStyleBackColor = true;
+            this.btn_annuler.Click += new System.EventHandler(this.btn_annuler_Click);
             // 
             // btn_save
             // 
@@ -375,7 +424,7 @@
             this.btn_save.Name = "btn_save";
             this.btn_save.Size = new System.Drawing.Size(75, 23);
             this.btn_save.TabIndex = 32;
-            this.btn_save.Text = "En dév";
+            this.btn_save.Text = "Save";
             this.btn_save.UseVisualStyleBackColor = true;
             // 
             // btn_liste
@@ -397,6 +446,7 @@
             this.btn_consulter.TabIndex = 30;
             this.btn_consulter.Text = "Consulter";
             this.btn_consulter.UseVisualStyleBackColor = true;
+            this.btn_consulter.Click += new System.EventHandler(this.btn_consulter_Click);
             // 
             // btn_supprimer
             // 
@@ -420,13 +470,13 @@
             // 
             // btn_ajouter
             // 
-            this.btn_ajouter.Enabled = false;
             this.btn_ajouter.Location = new System.Drawing.Point(12, 9);
             this.btn_ajouter.Name = "btn_ajouter";
             this.btn_ajouter.Size = new System.Drawing.Size(75, 23);
             this.btn_ajouter.TabIndex = 27;
-            this.btn_ajouter.Text = "En dév";
+            this.btn_ajouter.Text = "Ajouter";
             this.btn_ajouter.UseVisualStyleBackColor = true;
+            this.btn_ajouter.Click += new System.EventHandler(this.btn_ajouter_Click);
             // 
             // TA_Chambre
             // 
@@ -468,21 +518,9 @@
             this.BS_Ayantt.DataMember = "Ayant";
             this.BS_Ayantt.DataSource = this.DS_bd;
             // 
-            // CodCom
+            // error1
             // 
-            this.CodCom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.CodCom.DataPropertyName = "CodCom";
-            this.CodCom.HeaderText = "CodCom";
-            this.CodCom.Name = "CodCom";
-            this.CodCom.ReadOnly = true;
-            // 
-            // DescCom
-            // 
-            this.DescCom.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DescCom.DataPropertyName = "DescCom";
-            this.DescCom.HeaderText = "DescCom";
-            this.DescCom.Name = "DescCom";
-            this.DescCom.ReadOnly = true;
+            this.error1.ContainerControl = this;
             // 
             // f_e2
             // 
@@ -519,6 +557,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.BS_Loc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_T_Cham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayantt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -572,5 +611,10 @@
         private System.Windows.Forms.BindingSource BS_Ayantt;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodCom;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescCom;
+        private System.Windows.Forms.DataGridViewTextBoxColumn noChamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codComDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descComDataGridViewTextBoxColumn;
+
+        private System.Windows.Forms.ErrorProvider error1;
     }
 }
