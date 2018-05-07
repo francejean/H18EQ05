@@ -26,14 +26,14 @@ namespace Projet_equipe
 
         private void btn_ok_Click(object sender, EventArgs e)
         {
-            this.f.id = Int32.Parse(dg_selecteur.CurrentRow.Cells[0].Value.ToString());
+            this.f.add = dg_selecteur.CurrentRow.Cells[0].Value.ToString();
             this.f.ValideType();
             this.Close();
         }
 
         private void dg_selecteur_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            this.f.id = Int32.Parse(dg_selecteur.CurrentRow.Cells[0].Value.ToString());
+            this.f.add = dg_selecteur.CurrentRow.Cells[0].Value.ToString();
             this.f.ValideType();
             this.Close();
         }
