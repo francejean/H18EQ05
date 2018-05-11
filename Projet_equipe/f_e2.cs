@@ -514,11 +514,12 @@ namespace Projet_equipe
             }
             else error1.SetError(tb_Type, "");
 
-            if ((tb_Memo.Text.Length > 25)||(tb_Memo.Text.Length==0))
+            if ((tb_Memo.Text.Length > 25) || (tb_Memo.Text.Length == 0))
             {
                 error1.SetError(tb_Memo, "Texte vide ou trop long. Max 25 caractères");
                 valide = false;
             }
+            else error1.SetError(tb_Memo, "");
 
             return valide;
         }

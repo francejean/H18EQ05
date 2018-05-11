@@ -223,7 +223,7 @@
             this.tb_D_Loc.Location = new System.Drawing.Point(550, 69);
             this.tb_D_Loc.Name = "tb_D_Loc";
             this.tb_D_Loc.ReadOnly = true;
-            this.tb_D_Loc.Size = new System.Drawing.Size(100, 20);
+            this.tb_D_Loc.Size = new System.Drawing.Size(219, 20);
             this.tb_D_Loc.TabIndex = 15;
             // 
             // tb_D_Type
@@ -231,7 +231,7 @@
             this.tb_D_Type.Location = new System.Drawing.Point(550, 35);
             this.tb_D_Type.Name = "tb_D_Type";
             this.tb_D_Type.ReadOnly = true;
-            this.tb_D_Type.Size = new System.Drawing.Size(100, 20);
+            this.tb_D_Type.Size = new System.Drawing.Size(219, 20);
             this.tb_D_Type.TabIndex = 14;
             // 
             // tb_Type
