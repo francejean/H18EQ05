@@ -20,6 +20,7 @@ namespace Projet_equipe
         private DataRow Dtr_BK;
         private BindingSource BS_BK_Comm = new BindingSource();
         private f_e2selectComm Ls_Comm = new f_e2selectComm();
+        private f_e2Conf Conf = new f_e2Conf();
         private bool abandon = true;
         private bool ajout = false;
         private bool consul = true;
@@ -56,17 +57,6 @@ namespace Projet_equipe
             int i = 0;
 
             BS_Ayant.Position = 0;
-            /*foreach(DataRow Dtr_Contient in DS_bd.Tables["Ayant"].Rows)
-            {
-                this.BS_Comm.Position = this.BS_Comm.Find("CodCom", ((DataRowView)this.BS_Ayantt.Current).Row["CodCom"]);
-
-                if (BS_Comm.Position != -1)
-                {
-                    this.DS_bd.Tables["Ayant"].Rows[i]["DescCom"] = this.DS_bd.Tables["Commodite"].Rows[BS_Comm.Position]["DescCom"];
-                }
-                i++;
-                BS_Ayantt.Position++;
-            }*/
             BS_Ayant.DataSource = BS_Chambre;
             BS_Ayant.DataMember = "FK__Ayant__NoCham__6C190EBB";
             dg_selecteur.DataSource = BS_Ayant;
@@ -149,6 +139,7 @@ namespace Projet_equipe
             error1.SetError(tb_Type, "");
         }
 
+        #region "Ayant"
         private void Copie()
         {
             this.TA_BK_Comm.FillBy(this.DS_bd.BK_Commodite, tb_Cham.Text);
@@ -201,7 +192,7 @@ namespace Projet_equipe
             }
             Ajuster_Calcul_Comm();
         }
-
+        #endregion
         #region "Gestion bouton navigation"
         private void btn_premier_Click(object sender, EventArgs e)
         {
@@ -373,7 +364,11 @@ namespace Projet_equipe
                     else
                     {
                         error1.SetError(tb_Etage, "");
-                        tb_Cham.Focus();
+                        if (Conf.ShowDialog() == DialogResult.OK)
+                        {
+                            tb_Cham.Focus();
+                        }
+                        else tb_Etage.Focus();
                     }
                 }
             }
@@ -404,7 +399,11 @@ namespace Projet_equipe
                             if (index < 0)
                             {
                                 error1.SetError(tb_Cham, "");
-                                Creer_Cham();
+                                if (Conf.ShowDialog() == DialogResult.OK)
+                                {
+                                    Creer_Cham();
+                                }
+                                else tb_Cham.Focus();
                             }
                             else
                             {
@@ -515,9 +514,9 @@ namespace Projet_equipe
             }
             else error1.SetError(tb_Type, "");
 
-            if (tb_Memo.Text.Length > 25)
+            if ((tb_Memo.Text.Length > 25)||(tb_Memo.Text.Length==0))
             {
-                error1.SetError(tb_Memo, "Texte trop long. Max 25 caractères");
+                error1.SetError(tb_Memo, "Texte vide ou trop long. Max 25 caractères");
                 valide = false;
             }
 
@@ -594,8 +593,7 @@ namespace Projet_equipe
                 Ajuster_Calcul_Comm();
             }
         }
-        #endregion
 
-        
+        #endregion
     }
 }
