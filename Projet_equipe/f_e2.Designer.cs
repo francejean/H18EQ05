@@ -56,7 +56,6 @@
             this.l_étage = new System.Windows.Forms.Label();
             this.l_cham = new System.Windows.Forms.Label();
             this.tb_Cham = new System.Windows.Forms.TextBox();
-            this.BS_Chambre = new System.Windows.Forms.BindingSource(this.components);
             this.btn_dernier = new System.Windows.Forms.Button();
             this.btn_suivant = new System.Windows.Forms.Button();
             this.btn_precedent = new System.Windows.Forms.Button();
@@ -70,6 +69,7 @@
             this.btn_modifier = new System.Windows.Forms.Button();
             this.btn_ajouter = new System.Windows.Forms.Button();
             this.error1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.BS_Chambre = new System.Windows.Forms.BindingSource(this.components);
             this.TA_Chambre = new Projet_equipe.DS_bdTableAdapters.ChambreTableAdapter();
             this.TA_Ayant = new Projet_equipe.DS_bdTableAdapters.AyantTableAdapter();
             this.TA_Comm = new Projet_equipe.DS_bdTableAdapters.CommoditeTableAdapter();
@@ -80,16 +80,19 @@
             this.BS_T_Cham = new System.Windows.Forms.BindingSource(this.components);
             this.BS_Ayantt = new System.Windows.Forms.BindingSource(this.components);
             this.TA_BK_Comm = new Projet_equipe.DS_bdTableAdapters.BK_CommoditeTableAdapter();
+            this.TA_De = new Projet_equipe.DS_bdTableAdapters.DeTableAdapter();
+            this.BS_De = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dg_selecteur)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayant)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_bd)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Chambre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.error1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Chambre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Comm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Loc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_T_Cham)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayantt)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_De)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_lister
@@ -360,11 +363,6 @@
             this.tb_Cham.DoubleClick += new System.EventHandler(this.TxT_Cham_DoubleClick);
             this.tb_Cham.Validating += new System.ComponentModel.CancelEventHandler(this.tb_Cham_Validating);
             // 
-            // BS_Chambre
-            // 
-            this.BS_Chambre.DataMember = "Chambre";
-            this.BS_Chambre.DataSource = this.DS_bd;
-            // 
             // btn_dernier
             // 
             this.btn_dernier.Location = new System.Drawing.Point(455, 473);
@@ -439,13 +437,13 @@
             // 
             // btn_liste
             // 
-            this.btn_liste.Enabled = false;
             this.btn_liste.Location = new System.Drawing.Point(476, 9);
             this.btn_liste.Name = "btn_liste";
             this.btn_liste.Size = new System.Drawing.Size(75, 23);
             this.btn_liste.TabIndex = 31;
-            this.btn_liste.Text = "En dév";
+            this.btn_liste.Text = "Départ";
             this.btn_liste.UseVisualStyleBackColor = true;
+            this.btn_liste.Click += new System.EventHandler(this.btn_liste_Click);
             // 
             // btn_consulter
             // 
@@ -460,23 +458,23 @@
             // 
             // btn_supprimer
             // 
-            this.btn_supprimer.Enabled = false;
             this.btn_supprimer.Location = new System.Drawing.Point(175, 9);
             this.btn_supprimer.Name = "btn_supprimer";
             this.btn_supprimer.Size = new System.Drawing.Size(75, 23);
             this.btn_supprimer.TabIndex = 29;
-            this.btn_supprimer.Text = "En dév";
+            this.btn_supprimer.Text = "Supprimer";
             this.btn_supprimer.UseVisualStyleBackColor = true;
+            this.btn_supprimer.Click += new System.EventHandler(this.btn_supprimer_Click);
             // 
             // btn_modifier
             // 
-            this.btn_modifier.Enabled = false;
             this.btn_modifier.Location = new System.Drawing.Point(93, 9);
             this.btn_modifier.Name = "btn_modifier";
             this.btn_modifier.Size = new System.Drawing.Size(75, 23);
             this.btn_modifier.TabIndex = 28;
-            this.btn_modifier.Text = "En dév";
+            this.btn_modifier.Text = "Modifier";
             this.btn_modifier.UseVisualStyleBackColor = true;
+            this.btn_modifier.Click += new System.EventHandler(this.btn_modifier_Click);
             // 
             // btn_ajouter
             // 
@@ -491,6 +489,11 @@
             // error1
             // 
             this.error1.ContainerControl = this;
+            // 
+            // BS_Chambre
+            // 
+            this.BS_Chambre.DataMember = "Chambre";
+            this.BS_Chambre.DataSource = this.DS_bd;
             // 
             // TA_Chambre
             // 
@@ -536,6 +539,15 @@
             // 
             this.TA_BK_Comm.ClearBeforeFill = true;
             // 
+            // TA_De
+            // 
+            this.TA_De.ClearBeforeFill = true;
+            // 
+            // BS_De
+            // 
+            this.BS_De.DataMember = "De";
+            this.BS_De.DataSource = this.DS_bd;
+            // 
             // f_e2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,32 +578,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.dg_selecteur)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayant)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DS_bd)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.BS_Chambre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.error1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_Chambre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Comm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Loc)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_T_Cham)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BS_Ayantt)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.BS_De)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_lister;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_dernier;
         private System.Windows.Forms.Button btn_suivant;
         private System.Windows.Forms.Button btn_precedent;
         private System.Windows.Forms.Button btn_premier;
-        private System.Windows.Forms.Button btn_quitter;
-        private System.Windows.Forms.Button btn_annuler;
-        private System.Windows.Forms.Button btn_save;
-        private System.Windows.Forms.Button btn_liste;
-        private System.Windows.Forms.Button btn_consulter;
-        private System.Windows.Forms.Button btn_supprimer;
-        private System.Windows.Forms.Button btn_modifier;
-        private System.Windows.Forms.Button btn_ajouter;
         private DS_bd DS_bd;
         private DS_bdTableAdapters.ChambreTableAdapter TA_Chambre;
         private System.Windows.Forms.BindingSource BS_Chambre;
@@ -630,5 +633,16 @@
         private System.Windows.Forms.Button btn_supp;
         private System.Windows.Forms.DataGridViewTextBoxColumn codComDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn descComDataGridViewTextBoxColumn;
+        private DS_bdTableAdapters.DeTableAdapter TA_De;
+        private System.Windows.Forms.BindingSource BS_De;
+        private System.Windows.Forms.Button btn_lister;
+        private System.Windows.Forms.Button btn_quitter;
+        private System.Windows.Forms.Button btn_annuler;
+        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_liste;
+        private System.Windows.Forms.Button btn_consulter;
+        private System.Windows.Forms.Button btn_supprimer;
+        private System.Windows.Forms.Button btn_modifier;
+        private System.Windows.Forms.Button btn_ajouter;
     }
 }

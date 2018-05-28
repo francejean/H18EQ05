@@ -43,6 +43,7 @@ namespace Projet_equipe
             BKlist();
         }
 
+        #region "Fill"
         private void Fill()
         {
             this.TA_Loc.Fill(this.DS_bd.Localisation);
@@ -50,6 +51,7 @@ namespace Projet_equipe
             this.TA_Chambre.Fill(this.DS_bd.Chambre);
             this.TA_Comm.Fill(this.DS_bd.Commodite);
             this.TA_Ayant.FillBy(this.DS_bd.Ayant);
+            this.TA_De.Fill(this.DS_bd.De);
         }
 
         private void LienGrid()
@@ -138,7 +140,7 @@ namespace Projet_equipe
             error1.SetError(tb_Loc, "");
             error1.SetError(tb_Type, "");
         }
-
+        #endregion
         #region "Ayant"
         private void Copie()
         {
@@ -172,7 +174,7 @@ namespace Projet_equipe
 
         private void Ajuster_Calcul_Comm()
         {
-            LienGrid();
+            //LienGrid();
         }
 
         private void btn_supp_Click(object sender, EventArgs e)
@@ -187,7 +189,8 @@ namespace Projet_equipe
                 Dtr_BK = DS_bd.Tables["BK_Commodite"].NewRow();
                 Dtr_BK.ItemArray = foundRow.ItemArray;
                 DS_bd.Tables["BK_Commodite"].Rows.Add(Dtr_BK);
-
+                
+                TA_Ayant.DeleteQuery(tb_Cham.Text, dg_selecteur.Rows[BS_Ayant.Position].Cells[dg_selecteur.Columns[0].Index].Value.ToString());
                 BS_Ayant.RemoveAt(BS_Ayant.Position);
             }
             Ajuster_Calcul_Comm();
@@ -238,7 +241,6 @@ namespace Projet_equipe
             tb_Loc.Text = this.DS_bd.Tables["Localisation"].Rows[BS_Loc.Position]["CodLoc"].ToString();
             tb_D_Loc.Text = this.DS_bd.Tables["Localisation"].Rows[BS_Loc.Position]["DescLoc"].ToString();
         }
-        #endregion
 
         private void TxT_Cham_DoubleClick(object sender, EventArgs e)
         {
@@ -248,6 +250,7 @@ namespace Projet_equipe
                 f.Show();
             }
         }
+        #endregion
 
         public bool IsNumeric(string Nombre)
         {
@@ -292,10 +295,10 @@ namespace Projet_equipe
             tb_Type.Enabled = Ty;
         }
         #endregion
-
+        #region "Bouton"
         private void btn_ajouter_Click(object sender, EventArgs e)
         {
-            Act_Bout(false, false, false, false, false, false, false, true, false, false, false, false,false,false);
+            Act_Bout(false, false, false, false, false, false, false, true, false, false, false, false, false, false);
             Act_Saisie(false, true, true, false, true, true, false);
             abandon = false;
             ajout = true;
@@ -304,10 +307,50 @@ namespace Projet_equipe
             vider();
             tb_Etage.Focus();
         }
+        
+        private void btn_supprimer_Click(object sender, EventArgs e)
+        {
+            if (Conf.ShowDialog() == DialogResult.OK)
+            {
+                Supprimer_Cham();
+            }
+        }
+
+        private void btn_modifier_Click(object sender, EventArgs e)
+        {
+            BS_De.Position = 0;
+
+            foreach (DataRow Dtr_De in DS_bd.Tables["De"].Rows)
+            {
+                if (DS_bd.Tables["De"].Rows[BS_De.Position]["NoCham"].ToString() == tb_Cham.Text)
+                {
+                    if (DS_bd.Tables["De"].Rows[BS_De.Position]["Attribuee"].ToString() == "0")
+                    {
+                        Dtr_Cham = DS_bd.Tables["Chambre"].Rows[BS_Chambre.Position];
+                        Dtr_Cham.BeginEdit();
+                        Act_Bout(false, false, false, false, false, false, true, true, false, false, false, false, true, true);
+                        Act_Saisie(true, false, true, true, true, true, true);
+                        ajout = true;
+                        consul = false;
+                        Copie();
+                    }
+                    else
+                    {
+                        MessageBox.Show("La chambre est attribuée");
+                    }
+                    BS_De.Position += 1;
+                }
+                else
+                {
+                    BS_De.Position += 1;
+                }
+            }
+            BS_De.Position = 0;
+        }
 
         private void btn_consulter_Click(object sender, EventArgs e)
         {
-            Act_Bout(true, false, false, false, false, false, false, false, true, true, true, true,false,false);
+            Act_Bout(true, true, true, false, false, true, false, false, true, true, true, true, false, false);
             Act_Saisie(true, false, false, true, false, false, true);
 
             ajout = false;
@@ -324,12 +367,12 @@ namespace Projet_equipe
             BS_Chambre.Position = 0;
             Lien_Cham();
 
-            Act_Bout(true, false, false, false, false, false, false, false, true, true, true, true,false,false);
+            Act_Bout(true, true, true, false, false, true, false, false, true, true, true, true, false, false);
             Act_Saisie(true, false, false, true, false, false, true);
             ajout = false;
             consul = true;
         }
-
+        #endregion
         private void Creer_Cham()
         {
             Dtr_Cham = DS_bd.Tables["Chambre"].NewRow();
@@ -339,10 +382,40 @@ namespace Projet_equipe
             BS_Chambre.Position = BS_Chambre.Count - 1;
             Lien_Cham();
 
-            Act_Bout(false, false, false, false, false, false, true, true, false, false, false, false,true,true);
+            Act_Bout(false, false, false, false, false, false, true, true, false, false, false, false, true, true);
             Act_Saisie(true, false, true, true, true, true, true);
             Copie();
             //tb_Prix.Focus();
+        }
+
+        private void Supprimer_Cham()
+        {
+            BS_De.Position = 0;
+
+            foreach (DataRow Dtr_De in DS_bd.Tables["De"].Rows)
+            {
+                if (DS_bd.Tables["De"].Rows[BS_De.Position]["NoCham"].ToString() == tb_Cham.Text)
+                {
+                    if(DS_bd.Tables["De"].Rows[BS_De.Position]["Attribuee"].ToString() == "0")
+                    {
+                        BS_Chambre.RemoveCurrent();
+                        BS_Chambre.MoveFirst();
+
+                        TA_Chambre.Update(DS_bd.Chambre);
+                        TA_Ayant.Update(DS_bd.Ayant);
+                    }
+                    else
+                    {
+                        MessageBox.Show("La chambre est attribuée");
+                    }
+                    BS_De.Position += 1;
+                }
+                else
+                {
+                    BS_De.Position += 1;
+                }
+            }
+            BS_De.Position = 0;
         }
         #region "SetError"
         private void tb_Etage_Validating(object sender, CancelEventArgs e)
@@ -439,7 +512,6 @@ namespace Projet_equipe
                 f.Show();
             }
         }
-
         #region "Valide"
         private bool ValidePrix()
         {
@@ -523,29 +595,33 @@ namespace Projet_equipe
 
             return valide;
         }
-
+        #endregion
+        #region "Save"
         private void btn_save_Click(object sender, EventArgs e)
         {
             if (Valide())
             {
-                BS_Chambre.Position = 0;
+                //BS_Chambre.Position = 0;
                 Dtr_Cham.EndEdit();
                 this.TA_Chambre.Update(this.DS_bd.Chambre);
                 try
                 {
                     this.TA_Ayant.Update(this.DS_bd.Ayant);
-                    MessageBox.Show("Chambre créer");
+                    MessageBox.Show("Action Réussi");
                 }
                 catch (System.Exception ex)
                 {
-                    MessageBox.Show("Erreur lors de la création");
+                    //MessageBox.Show("Erreur lors de l'action");
                 }
-                Act_Bout(true, false, false, false, false, false, false, false, true, true, true, true,false,false);
+                Act_Bout(true, true, true, false, false, true, false, false, true, true, true, true,false,false);
                 Act_Saisie(true, false, false, true, false, false, true);
                 abandon = false;
+                ajout = false;
+                consul = true;
             }
         }
-
+        #endregion
+        #region "dg"
         private void tb_Prix_Leave(object sender, EventArgs e)
         {
             if (abandon == false)
@@ -589,12 +665,18 @@ namespace Projet_equipe
 
                 if (Dtr_Contient != null)
                 {
-                    BS_Comm.Position = BS_Comm.Find("CodCom", dg_selecteur.Rows[e.RowIndex].Cells[1].Value);
+                    BS_Comm.Position = BS_Comm.Find("CodCom", dg_selecteur.Rows[e.RowIndex].Cells[0].Value);
                 }
                 Ajuster_Calcul_Comm();
             }
         }
 
         #endregion
+
+        private void btn_liste_Click(object sender, EventArgs e)
+        {
+            f_e2Depart f = new Projet_equipe.f_e2Depart();
+            f.Show();
+        }
     }
 }
