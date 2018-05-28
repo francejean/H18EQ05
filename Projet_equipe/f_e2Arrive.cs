@@ -21,7 +21,8 @@ namespace Projet_equipe
 
         private void f_e2Arrive_Load(object sender, EventArgs e)
         {
-            this.TA_Arrive.Fill(this.DS_bd.Arrive);
+            //this.TA_Arrive.Fill(this.DS_bd.Arrive);
+            this.TA_Arrive.FillBy(this.DS_bd.Arrive);
         }
 
         private void btn_ok_Click(object sender, EventArgs e)

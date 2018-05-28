@@ -75,7 +75,20 @@ SELECT IdArrive, DateArrive, IdCli, IdReser, NoCham FROM Arrive WHERE (IdArrive 
               <Mapping SourceColumn="IdReser" DataSetColumn="IdReser" />
               <Mapping SourceColumn="NoCham" DataSetColumn="NoCham" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="h18equipe5ConnectionString (Settings)" DbObjectName="h18equipe5.DBO.Arrive" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        IdArrive, DateArrive, IdCli, IdReser, NoCham
+FROM            Arrive
+WHERE (NoCham IN (SELECT NoCham
+                                                FROM De
+                                                WHERE (Attribuee=1)))</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="AyantTableAdapter" GeneratorDataComponentClassName="AyantTableAdapter" Name="Ayant" UserDataComponentName="AyantTableAdapter">
             <MainSource>
