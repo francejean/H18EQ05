@@ -208,16 +208,7 @@ namespace Projet_equipe
                 }
                 if (idx >= 2)
                 {
-                    DataRowView Dtr_mod = (DataRowView)BS_De.Current;
-                    Dtr_mod.BeginEdit();
-                    //l_reser.Text = DS_bd.Tables["De"].Rows[BS_De.Position]["IdReser"].ToString();
-                    //l_cham.Text = DS_bd.Tables["De"].Rows[BS_De.Position]["NoCham"].ToString();
-                    //l_date.Text = DS_bd.Tables["De"].Rows[BS_De.Position]["Attribuee"].ToString();
-                    Dtr_mod["Attribuee"] = 0;
-                    //l_cli.Text = DS_bd.Tables["De"].Rows[BS_De.Position]["Attribuee"].ToString();
-                    Dtr_mod.EndEdit();
-                    DS_bd.Tables["De"].AcceptChanges();
-                    //this.TA_De.Update(this.DS_bd.De);
+                    TA_De.Update1(Convert.ToInt32(tb_reser.Text), tb_cham.Text);
                 }
                 BS_De.Position += 1;
             }
